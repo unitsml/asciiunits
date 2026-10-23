@@ -1,0 +1,502 @@
+{
+  "format": "asciiunits-oracle/v1",
+  "source": "unitsml 0.6.9",
+  "cases": [
+    {
+      "input": "m",
+      "kind": "accept"
+    },
+    {
+      "input": "mm",
+      "kind": "accept"
+    },
+    {
+      "input": "um",
+      "kind": "accept"
+    },
+    {
+      "input": "degK",
+      "kind": "accept"
+    },
+    {
+      "input": "kg",
+      "kind": "accept"
+    },
+    {
+      "input": "mm*s^-2",
+      "kind": "accept"
+    },
+    {
+      "input": "sqrt(Hz)",
+      "kind": "accept"
+    },
+    {
+      "input": "K/(kg*m)",
+      "kind": "accept"
+    },
+    {
+      "input": "cal_th/cm^2",
+      "kind": "accept"
+    },
+    {
+      "input": "Hz^10*darcy^100",
+      "kind": "accept"
+    },
+    {
+      "input": "A*C^3",
+      "kind": "accept"
+    },
+    {
+      "input": "A/C^-3",
+      "kind": "accept"
+    },
+    {
+      "input": "J/kg*K",
+      "kind": "accept"
+    },
+    {
+      "input": "dim_Theta*dim_L^2",
+      "kind": "accept"
+    },
+    {
+      "input": "kg^-2",
+      "kind": "accept"
+    },
+    {
+      "input": "mW*cm^(-2)",
+      "kind": "accept"
+    },
+    {
+      "input": "p-",
+      "kind": "accept"
+    },
+    {
+      "input": "k-",
+      "kind": "accept"
+    },
+    {
+      "input": "1",
+      "kind": "accept"
+    },
+    {
+      "input": "(m)(s)",
+      "kind": "accept"
+    },
+    {
+      "input": "m(s)",
+      "kind": "accept"
+    },
+    {
+      "input": "m s",
+      "kind": "accept"
+    },
+    {
+      "input": "m *s",
+      "kind": "accept"
+    },
+    {
+      "input": "m* s",
+      "kind": "accept"
+    },
+    {
+      "input": "m  s",
+      "kind": "accept"
+    },
+    {
+      "input": "m * s",
+      "kind": "accept"
+    },
+    {
+      "input": "km//s",
+      "kind": "accept"
+    },
+    {
+      "input": "s^-2//m",
+      "kind": "accept"
+    },
+    {
+      "input": "m sqrt(Hz)",
+      "kind": "accept"
+    },
+    {
+      "input": "(m^2*s^-1)//kg",
+      "kind": "accept"
+    },
+    {
+      "input": "dim_L",
+      "kind": "accept"
+    },
+    {
+      "input": "(dim_L*dim_M)/dim_T^2",
+      "kind": "accept"
+    },
+    {
+      "input": "sqrt(dim_M)",
+      "kind": "accept"
+    },
+    {
+      "input": "sqrt(m*s)",
+      "kind": "accept"
+    },
+    {
+      "input": "sqrt((m))",
+      "kind": "accept"
+    },
+    {
+      "input": "(sqrt(m))",
+      "kind": "accept"
+    },
+    {
+      "input": "sqrt(m)s",
+      "kind": "accept"
+    },
+    {
+      "input": "m^2*s",
+      "kind": "accept"
+    },
+    {
+      "input": "m^-1/2",
+      "kind": "accept"
+    },
+    {
+      "input": "m^(-1/2)",
+      "kind": "accept"
+    },
+    {
+      "input": "m^(1/2)",
+      "kind": "accept"
+    },
+    {
+      "input": "(m)(s)(A)",
+      "kind": "accept"
+    },
+    {
+      "input": "1m",
+      "kind": "accept"
+    },
+    {
+      "input": "1*m",
+      "kind": "accept"
+    },
+    {
+      "input": "m*1",
+      "kind": "accept"
+    },
+    {
+      "input": "((m))",
+      "kind": "accept"
+    },
+    {
+      "input": "dim_L dim_M",
+      "kind": "accept"
+    },
+    {
+      "input": "(dim_L)(dim_M)",
+      "kind": "accept"
+    },
+    {
+      "input": "(dim_L)*dim_M",
+      "kind": "accept"
+    },
+    {
+      "input": "mm*",
+      "kind": "accept"
+    },
+    {
+      "input": "k-",
+      "kind": "accept"
+    },
+    {
+      "input": "da-",
+      "kind": "accept"
+    },
+    {
+      "input": "M-",
+      "kind": "accept"
+    },
+    {
+      "input": "s^2/m^2",
+      "kind": "accept"
+    },
+    {
+      "input": "m/s^2",
+      "kind": "accept"
+    },
+    {
+      "input": "K*kg^0",
+      "kind": "accept"
+    },
+    {
+      "input": "Hz^-10",
+      "kind": "accept"
+    },
+    {
+      "input": "um^3",
+      "kind": "accept"
+    },
+    {
+      "input": "mmol",
+      "kind": "accept"
+    },
+    {
+      "input": "nm",
+      "kind": "accept"
+    },
+    {
+      "input": "kat",
+      "kind": "accept"
+    },
+    {
+      "input": "Bq*Sv^2",
+      "kind": "accept"
+    },
+    {
+      "input": "ft*lb/s^2",
+      "kind": "accept"
+    },
+    {
+      "input": "mu*s",
+      "kind": "accept"
+    },
+    {
+      "input": "m*s^-3*K^4",
+      "kind": "accept"
+    },
+    {
+      "input": "sqrt(m*s^-1)",
+      "kind": "accept"
+    },
+    {
+      "input": "cm^(3)",
+      "kind": "accept"
+    },
+    {
+      "input": "cal_th/cm^2 h",
+      "kind": "accept"
+    },
+    {
+      "input": "(a_year*s^-1)",
+      "kind": "accept"
+    },
+    {
+      "input": "m*s/",
+      "kind": "accept"
+    },
+    {
+      "input": "sqrt(sqrt(m))",
+      "kind": "accept"
+    },
+    {
+      "input": "ton-force (2000 lb)",
+      "kind": "accept"
+    },
+    {
+      "input": "ton-force (2000 lb)*m",
+      "kind": "accept"
+    },
+    {
+      "input": "ton-force (2000 lb)^2",
+      "kind": "accept"
+    },
+    {
+      "input": "m//s//kg",
+      "kind": "accept"
+    },
+    {
+      "input": "m/s/kg",
+      "kind": "accept"
+    },
+    {
+      "input": "m^2^3",
+      "kind": "reject"
+    },
+    {
+      "input": "m^(2)^3",
+      "kind": "reject"
+    },
+    {
+      "input": "m^(2^3)",
+      "kind": "reject"
+    },
+    {
+      "input": "m^(-2)^2",
+      "kind": "reject"
+    },
+    {
+      "input": "m*s^(1)",
+      "kind": "accept"
+    },
+    {
+      "input": "m*s^(-1)",
+      "kind": "accept"
+    },
+    {
+      "input": "m*s^(+1)",
+      "kind": "reject"
+    },
+    {
+      "input": "m*1/2",
+      "kind": "reject"
+    },
+    {
+      "input": "m/2",
+      "kind": "reject"
+    },
+    {
+      "input": "Mt",
+      "kind": "accept"
+    },
+    {
+      "input": "EiB",
+      "kind": "reject"
+    },
+    {
+      "input": "que?",
+      "kind": "reject"
+    },
+    {
+      "input": "m2",
+      "kind": "reject"
+    },
+    {
+      "input": "m^",
+      "kind": "reject"
+    },
+    {
+      "input": "sqrt",
+      "kind": "reject"
+    },
+    {
+      "input": "dim_Ldim_M",
+      "kind": "reject"
+    },
+    {
+      "input": "mm**",
+      "kind": "reject"
+    },
+    {
+      "input": "*m",
+      "kind": "reject"
+    },
+    {
+      "input": "()",
+      "kind": "reject"
+    },
+    {
+      "input": "sqrt()",
+      "kind": "reject"
+    },
+    {
+      "input": "m**",
+      "kind": "reject"
+    },
+    {
+      "input": "s-2",
+      "kind": "reject"
+    },
+    {
+      "input": "m^-1/2 (spaced)",
+      "kind": "reject"
+    },
+    {
+      "input": "m ^2",
+      "kind": "reject"
+    },
+    {
+      "input": "s ^ -2",
+      "kind": "reject"
+    },
+    {
+      "input": "m)s",
+      "kind": "reject"
+    },
+    {
+      "input": "m(s",
+      "kind": "reject"
+    },
+    {
+      "input": "(m",
+      "kind": "reject"
+    },
+    {
+      "input": "((m)",
+      "kind": "reject"
+    },
+    {
+      "input": "(m))",
+      "kind": "reject"
+    },
+    {
+      "input": "ki-",
+      "kind": "reject"
+    },
+    {
+      "input": "degK-",
+      "kind": "reject"
+    },
+    {
+      "input": "m 2",
+      "kind": "reject"
+    },
+    {
+      "input": "m^2 3",
+      "kind": "reject"
+    },
+    {
+      "input": "sqrt(m)^2",
+      "kind": "reject"
+    },
+    {
+      "input": "dim_L*",
+      "kind": "reject"
+    },
+    {
+      "input": "micro*s",
+      "kind": "reject"
+    },
+    {
+      "input": "(cm)^3",
+      "kind": "reject"
+    },
+    {
+      "input": "m1",
+      "kind": "reject"
+    },
+    {
+      "input": "-",
+      "kind": "reject"
+    },
+    {
+      "input": "--",
+      "kind": "reject"
+    },
+    {
+      "input": "^",
+      "kind": "reject"
+    },
+    {
+      "input": "*",
+      "kind": "reject"
+    },
+    {
+      "input": "^2m",
+      "kind": "reject"
+    },
+    {
+      "input": "k",
+      "kind": "reject"
+    },
+    {
+      "input": "TON",
+      "kind": "reject"
+    },
+    {
+      "input": "SQRT(m)",
+      "kind": "reject"
+    },
+    {
+      "input": "Sqrt(m)",
+      "kind": "reject"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+= asciiunits
+
+PARG grammar, checksummed artifact and conformance corpus for the
+`unitsml(...)` expression content of https://github.com/unitsml/unitsml-ruby[UnitsML]
+(the AsciiUnits unit-expression syntax).
+
+This repository ships **no runtime code**. It ships the contract:
+
+* `grammars/unitsml.parg` — the grammar source
+* `artifacts/unitsml.json` — the compiled artifact (`parsanol-tree/v2`, checksummed)
+* `tables/` — the terminal vocabularies (embedded in the artifact at compile
+  time; loaded from disk at parse time, see below)
+* `corpora/unitsml/` — conformance corpus, oracle-frozen against the
+  unitsml-ruby Parslet parser
+
+Runtime repositories (Ruby, Rust, TypeScript) load the artifact via their
+Parsanol runtime and map parse trees to their own object models. In Ruby:
+
+[source,ruby]
+----
+require "parsanol"
+artifact = Parsanol::PARG::Artifact.load("artifacts/unitsml.json", tables_dir: "tables")
+artifact.parse("expression", "mm*s^-2")
+----
+
+The `tables_dir` must point at this repository's `tables/` — the artifact
+records the tables in its manifest and resolves them at load time, so a
+runtime should vendor (or install) this checkout as a unit.
+
+== What the grammar covers
+
+Exactly the expression syntax `Unitsml::Parse` accepts — transcribed rule
+for rule, in the same alternative order (PEG ordered choice makes order
+load-bearing):
+
+* unit tokens from UnitsDB (`m`, `Hz`, `cal_th`, `ton-force (2000 lb)`, …),
+  prefixed units (`mm`, `mmol`), the literal `1`
+* exponents: `^2`, `^-2`, `^(1/2)` — a single power per unit, no chained powers
+* multiplication/division: `*`, `/`, `//`, implicit multiplication by
+  whitespace (`m s`), and direct fence/sqrt adjacency (`(m)(s)`, `sqrt(m)s`)
+* `sqrt(…)` — including `sqrt(sqrt(m))`
+* fencing `(…)` — powers do not attach to fenced or sqrt forms (`(cm)^3` is rejected)
+* prefix-only forms at top level (`k-`)
+* dimension expressions (`dim_L*dim_M^2`) with the same operators
+* `k-`-style forms, `mm*`-style trailing extenders, and every other quirk of
+  the original — the oracle corpus pins them
+
+== Artifact tree contract
+
+The artifact carries a single entry `expression`. Captures mirror the
+Parslet `.as()` names of the original (values are slices: `value` + `offset`
++ `length`):
+
+[cols="1,3"]
+|===
+|Capture |Meaning
+
+|`unit`, `prefix`, `dimension`
+|Terminal token
+
+|`integer`
+|Number text (optional leading `-`, optional `/number` part), under `slashed_number`
+
+|`power_numerator`
+|Exponent subtree (`integer` or nested `int_exp`)
+
+|`extender`
+|Operator: `*`, `/`, `//` — or the whitespace text for implicit multiplication
+
+|`sqrt`
+|`sqrt(…)` subtree
+
+|`int_exp`
+|Fenced `(…)` subtree
+
+|`sequence`
+|The right-recursive continuation of a chain
+
+|`first_set` / `second_set` / `first_int_exp_set` / `second_int_exp_set`
+|The two operands of an implicit multiplication (under `implicit_extended`)
+
+|`open_paren` / `close_paren`
+|Fence characters captured by the named int-exp rules
+|===
+
+Post-parse semantics (sqrt → 0.5 powers, `/` and `//` inverting exponents)
+belong to the runtime adapter, not the grammar — the grammar records
+structure only, exactly as the Parslet original does.
+
+== Rebuilding
+
+The `unitsml` gem (build-time only) supplies the terminal selection and the
+Parslet oracle; `parsanol` compiles:
+
+[source,sh]
+----
+bundle install
+rake tables:gen       # regenerate terminal tables from the unitsml gem
+rake oracle:regen     # re-baseline accept/reject against the parslet parser
+rake artifact:compile # compile with determinism check + checksums manifest
+rake contracts:regen  # replay artifact over the corpus, enforce parity
+rake ci               # everything green before committing
+----
+
+A data change in UnitsDB (new unit symbols, renamed prefixes) means:
+`rake tables:gen && rake artifact:compile && rake contracts:regen`, review
+the corpus diff, commit. Consumers pick the change up by updating their
+vendored artifact.
+
+== Verification status
+
+* Oracle: unitsml 0.6.9 Parslet parser, frozen in
+  `corpora/unitsml/expected-kinds.json`
+* Corpus: 124 inputs (70 accept / 54 reject), kind parity green
+* Differential probe at authoring time: 572 generated inputs, 0
+  accept/reject disagreements against the oracle
+* Engines: native (Rust) and `mode: :ruby` trees verified identical
+* Compile: byte-identical across recompiles (`rake artifact:compile`)

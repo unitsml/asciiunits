@@ -1,0 +1,129 @@
+# UnitsML expression corpus inputs.
+# One per line: ACCEPT or REJECT, TAB, then the expression (the content
+# inside unitsml(...)). Declared kinds are verified against the parslet
+# parser by scripts/gen_oracle.rb — the oracle wins, fix declarations here
+# if they disagree.
+ACCEPT	m
+ACCEPT	mm
+ACCEPT	um
+ACCEPT	degK
+ACCEPT	kg
+ACCEPT	mm*s^-2
+ACCEPT	sqrt(Hz)
+ACCEPT	K/(kg*m)
+ACCEPT	cal_th/cm^2
+ACCEPT	Hz^10*darcy^100
+ACCEPT	A*C^3
+ACCEPT	A/C^-3
+ACCEPT	J/kg*K
+ACCEPT	dim_Theta*dim_L^2
+ACCEPT	kg^-2
+ACCEPT	mW*cm^(-2)
+ACCEPT	p-
+ACCEPT	k-
+ACCEPT	1
+ACCEPT	(m)(s)
+ACCEPT	m(s)
+ACCEPT	m s
+ACCEPT	m *s
+ACCEPT	m* s
+ACCEPT	m  s
+ACCEPT	m * s
+ACCEPT	km//s
+ACCEPT	s^-2//m
+ACCEPT	m sqrt(Hz)
+ACCEPT	(m^2*s^-1)//kg
+ACCEPT	dim_L
+ACCEPT	(dim_L*dim_M)/dim_T^2
+ACCEPT	sqrt(dim_M)
+ACCEPT	sqrt(m*s)
+ACCEPT	sqrt((m))
+ACCEPT	(sqrt(m))
+ACCEPT	sqrt(m)s
+ACCEPT	m^2*s
+ACCEPT	m^-1/2
+ACCEPT	m^(-1/2)
+ACCEPT	m^(1/2)
+ACCEPT	(m)(s)(A)
+ACCEPT	1m
+ACCEPT	1*m
+ACCEPT	m*1
+ACCEPT	((m))
+ACCEPT	dim_L dim_M
+ACCEPT	(dim_L)(dim_M)
+ACCEPT	(dim_L)*dim_M
+ACCEPT	mm*
+ACCEPT	k-
+ACCEPT	da-
+ACCEPT	M-
+ACCEPT	s^2/m^2
+ACCEPT	m/s^2
+ACCEPT	K*kg^0
+ACCEPT	Hz^-10
+ACCEPT	um^3
+ACCEPT	mmol
+ACCEPT	nm
+ACCEPT	kat
+ACCEPT	Bq*Sv^2
+ACCEPT	ft*lb/s^2
+ACCEPT	mu*s
+ACCEPT	m*s^-3*K^4
+ACCEPT	sqrt(m*s^-1)
+ACCEPT	cm^(3)
+ACCEPT	cal_th/cm^2 h
+ACCEPT	(a_year*s^-1)
+ACCEPT	m*s/
+ACCEPT	sqrt(sqrt(m))
+ACCEPT	ton-force (2000 lb)
+ACCEPT	ton-force (2000 lb)*m
+ACCEPT	ton-force (2000 lb)^2
+ACCEPT	m//s//kg
+ACCEPT	m/s/kg
+REJECT	m^2^3
+REJECT	m^(2)^3
+REJECT	m^(2^3)
+REJECT	m^(-2)^2
+ACCEPT	m*s^(1)
+ACCEPT	m*s^(-1)
+REJECT	m*s^(+1)
+REJECT	m*1/2
+REJECT	m/2
+ACCEPT	Mt
+REJECT	EiB
+REJECT	que?
+REJECT	m2
+REJECT	m^
+REJECT	sqrt
+REJECT	dim_Ldim_M
+REJECT	mm**
+REJECT	*m
+REJECT	()
+REJECT	sqrt()
+REJECT	m**
+REJECT	s-2
+REJECT	m^-1/2 (spaced)
+REJECT	m ^2
+REJECT	s ^ -2
+REJECT	m)s
+REJECT	m(s
+REJECT	(m
+REJECT	((m)
+REJECT	(m))
+REJECT	ki-
+REJECT	degK-
+REJECT	m 2
+REJECT	m^2 3
+REJECT	sqrt(m)^2
+REJECT	dim_L*
+REJECT	micro*s
+REJECT	(cm)^3
+REJECT	m1
+REJECT	-
+REJECT	--
+REJECT	^
+REJECT	*
+REJECT	^2m
+REJECT	k
+REJECT	TON
+REJECT	SQRT(m)
+REJECT	Sqrt(m)

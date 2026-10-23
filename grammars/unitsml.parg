@@ -1,0 +1,79 @@
+# UnitsML AsciiUnits expression grammar.
+#
+# 1:1 transcription of unitsml-ruby lib/unitsml/parse.rb +
+# lib/unitsml/intermediate_exp_rules.rb (Parslet), rule for rule, in the
+# same alternative order — PEG ordered choice makes order decisive, and the
+# quirks (trailing-extender acceptance, guard fall-through to prefixed
+# units, no power after fenced/sqrt forms) are load-bearing.
+#
+# Terminal tables are generated from UnitsDB via scripts/gen_tables.rb and
+# embedded in the artifact at compile time.
+#
+# Capture names (unit, prefix, dimension, integer, power_numerator, extender,
+# sqrt, int_exp, sequence, first_set, second_set, open_paren, close_paren)
+# mirror the Parslet .as() names so consumers can map them 1:1.
+
+grammar UnitsmlAscii version "0.1.0" {
+
+  ws = %x09 / %x0A / %x0B / %x0C / %x0D / %x20
+  spaces = 1*ws
+  lparen = "("
+  rparen = ")"
+  hyphen = "-"
+  star = "*"
+  digit = %x30-39
+  forward_slashes = "//" / "/"
+  extender = (forward_slashes / star) as extender
+  number = ["-"] 1*digit
+  slashed_number = (number [forward_slashes number]) as integer
+  end_guard = !ANY / &(extender / lparen / rparen / spaces)
+
+  unit = alt from_table "units" column "name" as unit
+  single_letter_prefixes = alt from_table "prefixes_single" column "name" as prefix
+  double_letter_prefixes = alt from_table "prefixes_double" column "name" as prefix
+  dimensions = alt from_table "dimensions" column "name" as dimension
+
+  power = "^" slashed_number_int_exp as power_numerator
+  slashed_number_int_exp = slashed_number / (lparen slashed_number_named_int_exp as int_exp rparen)
+  slashed_number_named_int_exp = (lparen slashed_number_int_exp rparen) / slashed_number_int_exp
+  unit_and_power = unit [power]
+  sqrt_sequence = "sqrt" lparen prefixes_units_int_exp as sqrt rparen
+  sqrt_dimensions = "sqrt" lparen dimension_rules_int_exp as sqrt rparen
+  extended_prefixed_units = extender [spaces] prefixes_units_int_exp as sequence
+  powered_dimensions = dimensions [power]
+
+  prefixes_units = (sqrt_sequence [extended_prefixed_units]) / ("1" as unit [extended_prefixed_units]) / (unit_and_power extended_prefixed_units) / (unit_and_power end_guard) / (double_letter_prefixes unit_and_power extended_prefixed_units) / (double_letter_prefixes unit_and_power) / (single_letter_prefixes unit_and_power extended_prefixed_units) / (single_letter_prefixes unit_and_power)
+
+  wrapper_prefixes_units_value = int_exp_prefixes_units / prefixes_units_int_exp
+  int_exp_prefixes_units = lparen [spaces] named_int_exp_prefixes_units as int_exp [spaces] rparen
+  prefixes_units_named_int_exp = (lparen as open_paren [spaces] wrapper_prefixes_units_value as int_exp [spaces] rparen as close_paren)
+  named_int_exp_prefixes_units = (prefixes_units_named_int_exp as int_exp [(prefixes_units_int_exp / extended_prefixed_units)]) / prefixes_units_int_exp
+
+  implicit_extended = (prefixes_units as first_set spaces as extender prefixes_units as second_set) / (int_exp_prefixes_units as first_int_exp_set [spaces] int_exp_prefixes_units as second_int_exp_set) / (prefixes_units as first_set [spaces] int_exp_prefixes_units as second_int_exp_set) / (int_exp_prefixes_units as first_int_exp_set [spaces] prefixes_units as second_set)
+
+  prefixes_units_int_exp = (implicit_extended as implicit_extended [spaces] [prefixes_units_int_exp as sequence]) / (implicit_extended as implicit_extended [spaces] extender [spaces] [prefixes_units_int_exp as sequence]) / (int_exp_prefixes_units [spaces] extender [spaces] [prefixes_units_int_exp as sequence]) / (prefixes_units [spaces] extender [spaces] [prefixes_units_int_exp as sequence]) / (int_exp_prefixes_units [prefixes_units_int_exp as sequence]) / (prefixes_units [prefixes_units_int_exp as sequence])
+
+  dimension_rules = (sqrt_dimensions / powered_dimensions) [extended_dimension_rules]
+  extended_dimension_rules = [spaces] extender [spaces] dimension_rules_int_exp as sequence
+  int_exp_dimension_rules = lparen dimension_rules_named_exp as int_exp rparen [extended_dimension_rules]
+  dimension_rules_named_exp = ((lparen as open_paren dimension_rules_int_exp as int_exp rparen as close_paren) as int_exp [spaces] (dimension_rules_int_exp / extended_dimension_rules) as sequence) / dimension_rules_int_exp
+
+  dimension_rules_int_exp = (dimension_rules as first_set spaces as extender dimension_rules as second_set [dimension_rules_int_exp]) / (dimension_rules as first_set [spaces] int_exp_dimension_rules as second_int_exp_set [dimension_rules_int_exp]) / (int_exp_dimension_rules as first_int_exp_set [spaces] dimension_rules as second_set [dimension_rules_int_exp]) / (int_exp_dimension_rules as first_int_exp_set [spaces] int_exp_dimension_rules as second_int_exp_set [dimension_rules_int_exp]) / int_exp_dimension_rules / dimension_rules
+
+  expression = prefixes_units_int_exp / dimension_rules_int_exp / (single_letter_prefixes hyphen) / (double_letter_prefixes hyphen)
+
+  entry expression: expression
+
+  test expression {
+    accept "mm*s^-2"
+    accept "sqrt(Hz)"
+    accept "K/(kg*m)"
+    accept "p-"
+    accept "(m)(s)"
+    accept "mm*"
+    accept "sqrt(sqrt(m))"
+    reject "que?"
+    reject "m2"
+    reject "dim_Ldim_M"
+  }
+}
