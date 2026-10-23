@@ -11,11 +11,9 @@ namespace :tables do
     ruby "scripts/gen_tables.rb"
   end
 
-  desc "Fail if committed tables differ from a fresh generation"
+  desc "Fail if committed tables differ semantically from a fresh generation"
   task :check do
-    before = table_hash
-    ruby "scripts/gen_tables.rb"
-    abort "tables stale — run `rake tables:gen` and commit" unless before == table_hash
+    ruby "scripts/gen_tables.rb --check"
   end
 end
 
@@ -74,10 +72,6 @@ end
 
 def sha(path)
   Digest::SHA256.file(path).hexdigest
-end
-
-def table_hash
-  Dir["tables/*.yaml"].sort.map { |f| "#{f}:#{sha(f)}" }.join("\n")
 end
 
 require "open3"

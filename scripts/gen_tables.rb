@@ -19,7 +19,25 @@ def write_table(name, tokens)
   puts "tables/#{name}.yaml: #{sorted.size} tokens"
 end
 
-write_table("units", Unitsml::Unitsdb.units.filtered)
-write_table("prefixes_single", Unitsml::Unitsdb.prefixes_by_size(1))
-write_table("prefixes_double", Unitsml::Unitsdb.prefixes_by_size(2))
-write_table("dimensions", Unitsml::Unitsdb.dimensions.parsables.keys)
+# Byte comparison fails across platforms: Psych versions wrap long strings
+# differently. Compare the parsed token lists instead.
+def check_table(name, tokens)
+  sorted = tokens.map(&:to_s).uniq.sort_by { |t| [-t.length, t] }
+  committed = YAML.safe_load(File.read(File.join(ROOT, "tables/#{name}.yaml")))
+  expected = sorted.map { |t| { "name" => t } }
+  abort "tables/#{name}.yaml stale — run `rake tables:gen` and commit" unless committed == expected
+  puts "tables/#{name}.yaml: ok (#{sorted.size} tokens)"
+end
+
+tables = {
+  "units" => Unitsml::Unitsdb.units.filtered,
+  "prefixes_single" => Unitsml::Unitsdb.prefixes_by_size(1),
+  "prefixes_double" => Unitsml::Unitsdb.prefixes_by_size(2),
+  "dimensions" => Unitsml::Unitsdb.dimensions.parsables.keys,
+}
+
+if ARGV.delete("--check")
+  tables.each { |name, tokens| check_table(name, tokens) }
+else
+  tables.each { |name, tokens| write_table(name, tokens) }
+end
