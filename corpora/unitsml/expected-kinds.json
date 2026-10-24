@@ -200,7 +200,7 @@
     },
     {
       "input": "mm*",
-      "kind": "accept"
+      "kind": "reject"
     },
     {
       "input": "k-",
@@ -280,7 +280,7 @@
     },
     {
       "input": "m*s/",
-      "kind": "accept"
+      "kind": "reject"
     },
     {
       "input": "sqrt(sqrt(m))",
@@ -496,6 +496,82 @@
     },
     {
       "input": "Sqrt(m)",
+      "kind": "reject"
+    },
+    {
+      "input": "dB",
+      "kind": "accept"
+    },
+    {
+      "input": "dB^2",
+      "kind": "accept"
+    },
+    {
+      "input": "dB*m",
+      "kind": "accept"
+    },
+    {
+      "input": "mbar*s^-2",
+      "kind": "accept"
+    },
+    {
+      "input": "kgf",
+      "kind": "accept"
+    },
+    {
+      "input": "kgf*m/s^2",
+      "kind": "accept"
+    },
+    {
+      "input": "mbar",
+      "kind": "accept"
+    },
+    {
+      "input": "cSt",
+      "kind": "accept"
+    },
+    {
+      "input": "uin",
+      "kind": "accept"
+    },
+    {
+      "input": "mL",
+      "kind": "accept"
+    },
+    {
+      "input": "ml",
+      "kind": "accept"
+    },
+    {
+      "input": "kcal_th/cm^2",
+      "kind": "accept"
+    },
+    {
+      "input": "kcal_IT",
+      "kind": "accept"
+    },
+    {
+      "input": "cP*s^-1",
+      "kind": "accept"
+    },
+    {
+      "input": "kg*m^(-2)",
+      "kind": "accept"
+    },
+    {
+      "input": "dB-",
+      "kind": "reject"
+    },
+    {
+      "input": "dB/",
+      "kind": "reject"
+    },
+    {
+      "input": "db",
+      "kind": "reject"
+    },
+    {
+      "input": "Db",
       "kind": "reject"
     }
   ]

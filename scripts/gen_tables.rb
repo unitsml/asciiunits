@@ -2,8 +2,8 @@
 
 # unitsml gem terminal selection -> tables/*.yaml
 #
-# Mirrors lib/unitsml/parse.rb exactly: units.filtered, prefixes_by_size(1/2),
-# dimensions.parsables.keys. Deterministic ordering (length desc, then
+# Mirrors lib/unitsml/parse.rb exactly: units.filtered, prefixed_symbols,
+# prefixes_by_size(1/2), dimensions.parsables.keys. Deterministic ordering (length desc, then
 # alphabetical); the compiler expands from_table longest-first anyway.
 
 require "bundler/setup"
@@ -31,6 +31,7 @@ end
 
 tables = {
   "units" => Unitsml::Unitsdb.units.filtered,
+  "prefixed_units" => Unitsml::Unitsdb.units.prefixed_symbols,
   "prefixes_single" => Unitsml::Unitsdb.prefixes_by_size(1),
   "prefixes_double" => Unitsml::Unitsdb.prefixes_by_size(2),
   "dimensions" => Unitsml::Unitsdb.dimensions.parsables.keys,

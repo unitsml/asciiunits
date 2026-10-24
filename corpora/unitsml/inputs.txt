@@ -52,7 +52,7 @@ ACCEPT	((m))
 ACCEPT	dim_L dim_M
 ACCEPT	(dim_L)(dim_M)
 ACCEPT	(dim_L)*dim_M
-ACCEPT	mm*
+REJECT	mm*
 ACCEPT	k-
 ACCEPT	da-
 ACCEPT	M-
@@ -72,7 +72,7 @@ ACCEPT	sqrt(m*s^-1)
 ACCEPT	cm^(3)
 ACCEPT	cal_th/cm^2 h
 ACCEPT	(a_year*s^-1)
-ACCEPT	m*s/
+REJECT	m*s/
 ACCEPT	sqrt(sqrt(m))
 ACCEPT	ton-force (2000 lb)
 ACCEPT	ton-force (2000 lb)*m
@@ -127,3 +127,22 @@ REJECT	k
 REJECT	TON
 REJECT	SQRT(m)
 REJECT	Sqrt(m)
+ACCEPT	dB
+ACCEPT	dB^2
+ACCEPT	dB*m
+ACCEPT	mbar*s^-2
+ACCEPT	kgf
+ACCEPT	kgf*m/s^2
+ACCEPT	mbar
+ACCEPT	cSt
+ACCEPT	uin
+ACCEPT	mL
+ACCEPT	ml
+ACCEPT	kcal_th/cm^2
+ACCEPT	kcal_IT
+ACCEPT	cP*s^-1
+ACCEPT	kg*m^(-2)
+REJECT	dB-
+REJECT	dB/
+REJECT	db
+REJECT	Db
