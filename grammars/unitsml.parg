@@ -29,6 +29,7 @@ grammar UnitsmlAscii version "0.1.0" {
   end_guard = !ANY / &(extender / lparen / rparen / spaces)
 
   unit = alt from_table "units" column "name" as unit
+  prefixed_units = alt from_table "prefixed_units" column "name" as unit
   single_letter_prefixes = alt from_table "prefixes_single" column "name" as prefix
   double_letter_prefixes = alt from_table "prefixes_double" column "name" as prefix
   dimensions = alt from_table "dimensions" column "name" as dimension
@@ -42,7 +43,7 @@ grammar UnitsmlAscii version "0.1.0" {
   extended_prefixed_units = extender [spaces] prefixes_units_int_exp as sequence
   powered_dimensions = dimensions [power]
 
-  prefixes_units = (sqrt_sequence [extended_prefixed_units]) / ("1" as unit [extended_prefixed_units]) / (unit_and_power extended_prefixed_units) / (unit_and_power end_guard) / (double_letter_prefixes unit_and_power extended_prefixed_units) / (double_letter_prefixes unit_and_power) / (single_letter_prefixes unit_and_power extended_prefixed_units) / (single_letter_prefixes unit_and_power)
+  prefixes_units = (sqrt_sequence [extended_prefixed_units]) / ("1" as unit [extended_prefixed_units]) / (unit_and_power extended_prefixed_units) / (unit_and_power end_guard) / (double_letter_prefixes unit_and_power extended_prefixed_units) / (double_letter_prefixes unit_and_power) / (single_letter_prefixes unit_and_power extended_prefixed_units) / (single_letter_prefixes unit_and_power) / (prefixed_units [power] end_guard)
 
   wrapper_prefixes_units_value = int_exp_prefixes_units / prefixes_units_int_exp
   int_exp_prefixes_units = lparen [spaces] named_int_exp_prefixes_units as int_exp [spaces] rparen
@@ -51,7 +52,7 @@ grammar UnitsmlAscii version "0.1.0" {
 
   implicit_extended = (prefixes_units as first_set spaces as extender prefixes_units as second_set) / (int_exp_prefixes_units as first_int_exp_set [spaces] int_exp_prefixes_units as second_int_exp_set) / (prefixes_units as first_set [spaces] int_exp_prefixes_units as second_int_exp_set) / (int_exp_prefixes_units as first_int_exp_set [spaces] prefixes_units as second_set)
 
-  prefixes_units_int_exp = (implicit_extended as implicit_extended [spaces] [prefixes_units_int_exp as sequence]) / (implicit_extended as implicit_extended [spaces] extender [spaces] [prefixes_units_int_exp as sequence]) / (int_exp_prefixes_units [spaces] extender [spaces] [prefixes_units_int_exp as sequence]) / (prefixes_units [spaces] extender [spaces] [prefixes_units_int_exp as sequence]) / (int_exp_prefixes_units [prefixes_units_int_exp as sequence]) / (prefixes_units [prefixes_units_int_exp as sequence])
+  prefixes_units_int_exp = (implicit_extended as implicit_extended [spaces] [prefixes_units_int_exp as sequence]) / (implicit_extended as implicit_extended [spaces] extender [spaces] prefixes_units_int_exp as sequence) / (int_exp_prefixes_units [spaces] extender [spaces] prefixes_units_int_exp as sequence) / (prefixes_units [spaces] extender [spaces] prefixes_units_int_exp as sequence) / (int_exp_prefixes_units [prefixes_units_int_exp as sequence]) / (prefixes_units [prefixes_units_int_exp as sequence])
 
   dimension_rules = (sqrt_dimensions / powered_dimensions) [extended_dimension_rules]
   extended_dimension_rules = [spaces] extender [spaces] dimension_rules_int_exp as sequence
@@ -70,10 +71,16 @@ grammar UnitsmlAscii version "0.1.0" {
     accept "K/(kg*m)"
     accept "p-"
     accept "(m)(s)"
-    accept "mm*"
+    accept "dB"
+    accept "dB^2"
+    accept "mbar*s^-2"
+    accept "kgf"
     accept "sqrt(sqrt(m))"
     reject "que?"
     reject "m2"
     reject "dim_Ldim_M"
+    reject "mm*"
+    reject "m*s/"
+    reject "sqrt(m)^2"
   }
 }

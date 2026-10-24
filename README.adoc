@@ -35,6 +35,8 @@ load-bearing):
 
 * unit tokens from UnitsDB (`m`, `Hz`, `cal_th`, `ton-force (2000 lb)`, …),
   prefixed units (`mm`, `mmol`), the literal `1`
+* registered prefixed symbols (`dB`, `mbar`, `kgf`, `cSt`, …) tried after
+  normal composition — decibel parses as an atom (`bel_B`), not deci-bel
 * exponents: `^2`, `^-2`, `^(1/2)` — a single power per unit, no chained powers
 * multiplication/division: `*`, `/`, `//`, implicit multiplication by
   whitespace (`m s`), and direct fence/sqrt adjacency (`(m)(s)`, `sqrt(m)s`)
@@ -42,8 +44,7 @@ load-bearing):
 * fencing `(…)` — powers do not attach to fenced or sqrt forms (`(cm)^3` is rejected)
 * prefix-only forms at top level (`k-`)
 * dimension expressions (`dim_L*dim_M^2`) with the same operators
-* `k-`-style forms, `mm*`-style trailing extenders, and every other quirk of
-  the original — the oracle corpus pins them
+* every other quirk of the original — the oracle corpus pins them
 
 == Artifact tree contract
 
@@ -126,10 +127,11 @@ vendored artifact.
 
 == Verification status
 
-* Oracle: unitsml 0.6.9 Parslet parser, frozen in
+* Oracle: the unitsml-ruby Parslet parser (parg-parser branch, including
+  the registered prefixed-symbol support), frozen in
   `corpora/unitsml/expected-kinds.json`
-* Corpus: 124 inputs (70 accept / 54 reject), kind parity green
-* Differential probe at authoring time: 572 generated inputs, 0
+* Corpus: 143 inputs (80 accept / 63 reject), kind parity green
+* Differential probes at authoring time: 572 + 172 generated inputs, 0
   accept/reject disagreements against the oracle
 * Engines: native (Rust) and `mode: :ruby` trees verified identical
 * Compile: byte-identical across recompiles (`rake artifact:compile`)

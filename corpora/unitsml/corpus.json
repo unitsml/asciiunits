@@ -1,6 +1,6 @@
 {
   "grammar": "unitsml",
-  "artifact_checksum": "sha256:b1497bdaff9a9bdf5bd92e7a0354200a8dfa54f91c9cdf3c254537e95ed883cf",
+  "artifact_checksum": "sha256:20716e7149667545ad7e8e2071c3d8b6a413a1e3e66c650e51117de868d5b2b2",
   "cases": [
     {
       "input": "m",
@@ -1501,30 +1501,7 @@
     },
     {
       "input": "mm*",
-      "kind": "accept",
-      "parsanol_tree": {
-        "prefix": {
-          "value": "m",
-          "offset": 0,
-          "length": 1,
-          "line": 1,
-          "column": 1
-        },
-        "unit": {
-          "value": "m",
-          "offset": 1,
-          "length": 1,
-          "line": 1,
-          "column": 2
-        },
-        "extender": {
-          "value": "*",
-          "offset": 2,
-          "length": 1,
-          "line": 1,
-          "column": 3
-        }
-      }
+      "kind": "reject"
     },
     {
       "input": "k-",
@@ -2168,39 +2145,7 @@
     },
     {
       "input": "m*s/",
-      "kind": "accept",
-      "parsanol_tree": {
-        "unit": {
-          "value": "m",
-          "offset": 0,
-          "length": 1,
-          "line": 1,
-          "column": 1
-        },
-        "extender": {
-          "value": "*",
-          "offset": 1,
-          "length": 1,
-          "line": 1,
-          "column": 2
-        },
-        "sequence": {
-          "unit": {
-            "value": "s",
-            "offset": 2,
-            "length": 1,
-            "line": 1,
-            "column": 3
-          },
-          "extender": {
-            "value": "/",
-            "offset": 3,
-            "length": 1,
-            "line": 1,
-            "column": 4
-          }
-        }
-      }
+      "kind": "reject"
     },
     {
       "input": "sqrt(sqrt(m))",
@@ -2665,6 +2610,476 @@
     },
     {
       "input": "Sqrt(m)",
+      "kind": "reject"
+    },
+    {
+      "input": "dB",
+      "kind": "accept",
+      "parsanol_tree": {
+        "unit": {
+          "value": "dB",
+          "offset": 0,
+          "length": 2,
+          "line": 1,
+          "column": 1
+        }
+      }
+    },
+    {
+      "input": "dB^2",
+      "kind": "accept",
+      "parsanol_tree": {
+        "unit": {
+          "value": "dB",
+          "offset": 0,
+          "length": 2,
+          "line": 1,
+          "column": 1
+        },
+        "power_numerator": {
+          "integer": {
+            "value": "2",
+            "offset": 3,
+            "length": 1,
+            "line": 1,
+            "column": 4
+          }
+        }
+      }
+    },
+    {
+      "input": "dB*m",
+      "kind": "accept",
+      "parsanol_tree": {
+        "unit": {
+          "value": "dB",
+          "offset": 0,
+          "length": 2,
+          "line": 1,
+          "column": 1
+        },
+        "extender": {
+          "value": "*",
+          "offset": 2,
+          "length": 1,
+          "line": 1,
+          "column": 3
+        },
+        "sequence": {
+          "unit": {
+            "value": "m",
+            "offset": 3,
+            "length": 1,
+            "line": 1,
+            "column": 4
+          }
+        }
+      }
+    },
+    {
+      "input": "mbar*s^-2",
+      "kind": "accept",
+      "parsanol_tree": {
+        "prefix": {
+          "value": "m",
+          "offset": 0,
+          "length": 1,
+          "line": 1,
+          "column": 1
+        },
+        "unit": {
+          "value": "bar",
+          "offset": 1,
+          "length": 3,
+          "line": 1,
+          "column": 2
+        },
+        "extender": {
+          "value": "*",
+          "offset": 4,
+          "length": 1,
+          "line": 1,
+          "column": 5
+        },
+        "sequence": {
+          "unit": {
+            "value": "s",
+            "offset": 5,
+            "length": 1,
+            "line": 1,
+            "column": 6
+          },
+          "power_numerator": {
+            "integer": {
+              "value": "-2",
+              "offset": 7,
+              "length": 2,
+              "line": 1,
+              "column": 8
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": "kgf",
+      "kind": "accept",
+      "parsanol_tree": {
+        "prefix": {
+          "value": "k",
+          "offset": 0,
+          "length": 1,
+          "line": 1,
+          "column": 1
+        },
+        "unit": {
+          "value": "gf",
+          "offset": 1,
+          "length": 2,
+          "line": 1,
+          "column": 2
+        }
+      }
+    },
+    {
+      "input": "kgf*m/s^2",
+      "kind": "accept",
+      "parsanol_tree": {
+        "prefix": {
+          "value": "k",
+          "offset": 0,
+          "length": 1,
+          "line": 1,
+          "column": 1
+        },
+        "unit": {
+          "value": "gf",
+          "offset": 1,
+          "length": 2,
+          "line": 1,
+          "column": 2
+        },
+        "extender": {
+          "value": "*",
+          "offset": 3,
+          "length": 1,
+          "line": 1,
+          "column": 4
+        },
+        "sequence": {
+          "unit": {
+            "value": "m",
+            "offset": 4,
+            "length": 1,
+            "line": 1,
+            "column": 5
+          },
+          "extender": {
+            "value": "/",
+            "offset": 5,
+            "length": 1,
+            "line": 1,
+            "column": 6
+          },
+          "sequence": {
+            "unit": {
+              "value": "s",
+              "offset": 6,
+              "length": 1,
+              "line": 1,
+              "column": 7
+            },
+            "power_numerator": {
+              "integer": {
+                "value": "2",
+                "offset": 8,
+                "length": 1,
+                "line": 1,
+                "column": 9
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": "mbar",
+      "kind": "accept",
+      "parsanol_tree": {
+        "prefix": {
+          "value": "m",
+          "offset": 0,
+          "length": 1,
+          "line": 1,
+          "column": 1
+        },
+        "unit": {
+          "value": "bar",
+          "offset": 1,
+          "length": 3,
+          "line": 1,
+          "column": 2
+        }
+      }
+    },
+    {
+      "input": "cSt",
+      "kind": "accept",
+      "parsanol_tree": {
+        "prefix": {
+          "value": "c",
+          "offset": 0,
+          "length": 1,
+          "line": 1,
+          "column": 1
+        },
+        "unit": {
+          "value": "St",
+          "offset": 1,
+          "length": 2,
+          "line": 1,
+          "column": 2
+        }
+      }
+    },
+    {
+      "input": "uin",
+      "kind": "accept",
+      "parsanol_tree": {
+        "prefix": {
+          "value": "u",
+          "offset": 0,
+          "length": 1,
+          "line": 1,
+          "column": 1
+        },
+        "unit": {
+          "value": "in",
+          "offset": 1,
+          "length": 2,
+          "line": 1,
+          "column": 2
+        }
+      }
+    },
+    {
+      "input": "mL",
+      "kind": "accept",
+      "parsanol_tree": {
+        "prefix": {
+          "value": "m",
+          "offset": 0,
+          "length": 1,
+          "line": 1,
+          "column": 1
+        },
+        "unit": {
+          "value": "L",
+          "offset": 1,
+          "length": 1,
+          "line": 1,
+          "column": 2
+        }
+      }
+    },
+    {
+      "input": "ml",
+      "kind": "accept",
+      "parsanol_tree": {
+        "prefix": {
+          "value": "m",
+          "offset": 0,
+          "length": 1,
+          "line": 1,
+          "column": 1
+        },
+        "unit": {
+          "value": "l",
+          "offset": 1,
+          "length": 1,
+          "line": 1,
+          "column": 2
+        }
+      }
+    },
+    {
+      "input": "kcal_th/cm^2",
+      "kind": "accept",
+      "parsanol_tree": {
+        "prefix": {
+          "value": "k",
+          "offset": 0,
+          "length": 1,
+          "line": 1,
+          "column": 1
+        },
+        "unit": {
+          "value": "cal_th",
+          "offset": 1,
+          "length": 6,
+          "line": 1,
+          "column": 2
+        },
+        "extender": {
+          "value": "/",
+          "offset": 7,
+          "length": 1,
+          "line": 1,
+          "column": 8
+        },
+        "sequence": {
+          "prefix": {
+            "value": "c",
+            "offset": 8,
+            "length": 1,
+            "line": 1,
+            "column": 9
+          },
+          "unit": {
+            "value": "m",
+            "offset": 9,
+            "length": 1,
+            "line": 1,
+            "column": 10
+          },
+          "power_numerator": {
+            "integer": {
+              "value": "2",
+              "offset": 11,
+              "length": 1,
+              "line": 1,
+              "column": 12
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": "kcal_IT",
+      "kind": "accept",
+      "parsanol_tree": {
+        "prefix": {
+          "value": "k",
+          "offset": 0,
+          "length": 1,
+          "line": 1,
+          "column": 1
+        },
+        "unit": {
+          "value": "cal_IT",
+          "offset": 1,
+          "length": 6,
+          "line": 1,
+          "column": 2
+        }
+      }
+    },
+    {
+      "input": "cP*s^-1",
+      "kind": "accept",
+      "parsanol_tree": {
+        "prefix": {
+          "value": "c",
+          "offset": 0,
+          "length": 1,
+          "line": 1,
+          "column": 1
+        },
+        "unit": {
+          "value": "P",
+          "offset": 1,
+          "length": 1,
+          "line": 1,
+          "column": 2
+        },
+        "extender": {
+          "value": "*",
+          "offset": 2,
+          "length": 1,
+          "line": 1,
+          "column": 3
+        },
+        "sequence": {
+          "unit": {
+            "value": "s",
+            "offset": 3,
+            "length": 1,
+            "line": 1,
+            "column": 4
+          },
+          "power_numerator": {
+            "integer": {
+              "value": "-1",
+              "offset": 5,
+              "length": 2,
+              "line": 1,
+              "column": 6
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": "kg*m^(-2)",
+      "kind": "accept",
+      "parsanol_tree": {
+        "prefix": {
+          "value": "k",
+          "offset": 0,
+          "length": 1,
+          "line": 1,
+          "column": 1
+        },
+        "unit": {
+          "value": "g",
+          "offset": 1,
+          "length": 1,
+          "line": 1,
+          "column": 2
+        },
+        "extender": {
+          "value": "*",
+          "offset": 2,
+          "length": 1,
+          "line": 1,
+          "column": 3
+        },
+        "sequence": {
+          "unit": {
+            "value": "m",
+            "offset": 3,
+            "length": 1,
+            "line": 1,
+            "column": 4
+          },
+          "power_numerator": {
+            "int_exp": {
+              "integer": {
+                "value": "-2",
+                "offset": 6,
+                "length": 2,
+                "line": 1,
+                "column": 7
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": "dB-",
+      "kind": "reject"
+    },
+    {
+      "input": "dB/",
+      "kind": "reject"
+    },
+    {
+      "input": "db",
+      "kind": "reject"
+    },
+    {
+      "input": "Db",
       "kind": "reject"
     }
   ]

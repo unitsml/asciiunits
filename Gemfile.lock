@@ -1,6 +1,21 @@
+GIT
+  remote: https://github.com/unitsml/unitsml-ruby.git
+  revision: 96149e7266bb5db4b144edcaaf879a4d5e9a9161
+  branch: parg-parser
+  specs:
+    unitsml (0.6.9)
+      asciiunits (~> 0.1)
+      htmlentities
+      lutaml-model (~> 0.8.0)
+      mml (~> 2.4.0)
+      parslet
+      unitsdb (~> 2.2.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
+    asciiunits (0.1.0)
+      parsanol (~> 1.3)
     base64 (0.3.0)
     bcp47_spec (0.2.1)
     bigdecimal (3.3.1)
@@ -75,8 +90,6 @@ GEM
       moxml
     moxml (0.5.156)
     ostruct (0.6.3)
-    ox (2.14.29)
-      bigdecimal (>= 3.0)
     paint (2.3.0)
     parsanol (1.3.108-aarch64-linux)
     parsanol (1.3.108-aarch64-linux-musl)
@@ -133,13 +146,6 @@ GEM
       rubyzip (~> 3.4)
       table_tennis (~> 0.0.7)
       thor (~> 1.0)
-    unitsml (0.6.9)
-      htmlentities
-      lutaml-model (~> 0.8.0)
-      mml (~> 2.4.0)
-      ox
-      parslet
-      unitsdb (~> 2.2.5)
     yeptris (0.6.39.1-aarch64-linux)
       ffi (~> 1.15)
     yeptris (0.6.39.1-aarch64-linux-musl)
@@ -175,9 +181,10 @@ PLATFORMS
 DEPENDENCIES
   parsanol (~> 1.3)
   rake
-  unitsml (~> 0.6.9)
+  unitsml!
 
 CHECKSUMS
+  asciiunits (0.1.0) sha256=05e97d23486106c7c21dd3948c7ecb0294ed11b421837d2e6ed505fbeb9b65ce
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bcp47_spec (0.2.1) sha256=3fd62edf96c126bd9624e4319ac74082a966081859d1ee0ef3c3041640a37810
   bigdecimal (3.3.1) sha256=eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218
@@ -216,7 +223,6 @@ CHECKSUMS
   mml (2.4.3) sha256=edcc39dad52b1f5caa1c2bd2197a9aa23410a054b5de2cf3545ec189d3194752
   moxml (0.5.156) sha256=80c3de63fcbfed4e102b1e2883c775bd1f800ae387bf9733123dfd2b058374c8
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
-  ox (2.14.29) sha256=206736d5a8dade9dca10cf72022bc157ad6ca3eecaba3853918426ed88e12dc2
   paint (2.3.0) sha256=327d623e4038619d5bd99ae5db07973859cd78400c7f0329eea283cef8e83be5
   parsanol (1.3.108-aarch64-linux) sha256=575f517f89dc1b3c8d4283bf386dd1b79afaaf3a1ae77910e0f3321c0b2fb5f4
   parsanol (1.3.108-aarch64-linux-musl) sha256=71d4af56d0dea27f52691e5b06bb56a7335ac30793c0a0c80cdd7f21c9492bb6
@@ -244,7 +250,7 @@ CHECKSUMS
   unicode-name (1.15.1) sha256=b8f2e3ca14bc24799f84a4f74d43a3612d02a051700d88bc6ca8e3bd53cda3f6
   unicode-types (1.12.0) sha256=7e26a4352cecc2a50325a3793df834b732581ca9f25c5e29f46f3378934363f6
   unitsdb (2.2.6) sha256=2902e9dd9aff341983b6cc73f1cbe9b908b2c437c6eca36154be2b9d58873247
-  unitsml (0.6.9) sha256=c71d70bf3f5f95598f9242dc0932252409333a2952893300c399b30268b54fe5
+  unitsml (0.6.9)
   yeptris (0.6.39.1-aarch64-linux) sha256=6a082c1e0c256972aa4e05e410387b7471df03823deb30d137a1a4cc7b23f105
   yeptris (0.6.39.1-aarch64-linux-musl) sha256=97fdc997cec83fe536549b56597e5c644252a6520f4e0f5404089477101606a9
   yeptris (0.6.39.1-arm-linux-eabihf) sha256=9cd83a6d3317e5910a4dfa862e6ec4d38376694a25a96260ea7ee4e871489cca
