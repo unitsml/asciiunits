@@ -14,12 +14,12 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    asciiunits (0.1.1)
+    asciiunits (0.1.2)
       parsanol (~> 1.3)
     base64 (0.3.0)
     bcp47_spec (0.2.1)
     bigdecimal (3.3.1)
-    canon (0.3.114)
+    canon (0.3.117)
       diff-lcs
       json
       leptris (~> 1.9.376)
@@ -76,7 +76,7 @@ GEM
       bigdecimal
       strscan (>= 3.1.1)
     logger (1.7.0)
-    lutaml-model (0.8.126)
+    lutaml-model (0.8.128)
       base64 (>= 0.1.1)
       bigdecimal
       canon
@@ -91,7 +91,7 @@ GEM
     mml (2.4.3)
       lutaml-model (~> 0.8.65)
       moxml
-    moxml (0.5.156)
+    moxml (0.5.162)
     ostruct (0.6.3)
     paint (2.3.0)
     parsanol (1.3.108-aarch64-linux)
@@ -191,12 +191,12 @@ DEPENDENCIES
   unitsml!
 
 CHECKSUMS
-  asciiunits (0.1.1) sha256=b06a17ebd42c19222afe7e23aed493a667ffeacfa7d6935bdae965add7cd56ae
+  asciiunits (0.1.2) sha256=8850da182ac17f716209c8b6843be0fd4794acf98b7d0ee1ae17570ffddb7c4b
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bcp47_spec (0.2.1) sha256=3fd62edf96c126bd9624e4319ac74082a966081859d1ee0ef3c3041640a37810
   bigdecimal (3.3.1) sha256=eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218
   bundler (4.0.23) sha256=407ba8a1d928f412847f819aa5f8b6aef7c59fb51feb517112af8a165487287b
-  canon (0.3.114) sha256=f11c0c0c5f181ab9459f9e2c3545b6e7a80ac6cc32aba2cf46428c84b89894b0
+  canon (0.3.117) sha256=37e9e33ec0edea95bf0b271acf1530ed7982f400c609d0186ec3fe5fffab0ad2
   concurrent-ruby (1.3.8) sha256=b2f1be836e968ccc78ccfce277ea79c72a88633f22306782c16ff23fb415d1e1
   csv (3.3.6) sha256=aba61e7e507a66f03d45cb1f3c4b6359861c3504038b422962875dce099e4456
   diff-lcs (2.0.0) sha256=708a5d52ec2945b50f8f53a181174aa1ef2c496edf81c05957fe956dabb363d5
@@ -226,11 +226,11 @@ CHECKSUMS
   link_header (0.0.8) sha256=15c65ce43b29f739b30d05e5f25c22c23797e89cf6f905dbb595fb4c70cb55f9
   liquid (5.14.0) sha256=e1020c2b2ee58c7a4d3bfdc7a331537bd27a783353748bff0bf27c6ac0c17065
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
-  lutaml-model (0.8.126) sha256=409c89cb23514340703003b929777b37e2f7f734761ada2bfe6d104231e2349a
+  lutaml-model (0.8.128) sha256=baf440d09f7a755be9bd39fdfffc9dc121f9d295e36d02b35791b2bed095c1db
   matrix (0.4.3) sha256=a0d5ab7ddcc1973ff690ab361b67f359acbb16958d1dc072b8b956a286564c5b
   memo_wise (1.13.0) sha256=30220c38c4cef410849bc73553c58664dc2c91c6379e4a1df22aea02358b716b
   mml (2.4.3) sha256=edcc39dad52b1f5caa1c2bd2197a9aa23410a054b5de2cf3545ec189d3194752
-  moxml (0.5.156) sha256=80c3de63fcbfed4e102b1e2883c775bd1f800ae387bf9733123dfd2b058374c8
+  moxml (0.5.162) sha256=40386bc8e90e7d4f821c9b4b36d23bd32cd5bf1f8171fe103313a3fc6d6fa3fd
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
   paint (2.3.0) sha256=327d623e4038619d5bd99ae5db07973859cd78400c7f0329eea283cef8e83be5
   parsanol (1.3.108-aarch64-linux) sha256=575f517f89dc1b3c8d4283bf386dd1b79afaaf3a1ae77910e0f3321c0b2fb5f4
