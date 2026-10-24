@@ -1,14 +1,13 @@
 GIT
   remote: https://github.com/unitsml/unitsml-ruby.git
-  revision: 96149e7266bb5db4b144edcaaf879a4d5e9a9161
-  branch: parg-parser
+  revision: 6aff11c8b06c2b1470582aa81871bf1c51afe9ba
+  branch: main
   specs:
-    unitsml (0.6.9)
+    unitsml (0.6.10)
       asciiunits (~> 0.1)
       htmlentities
       lutaml-model (~> 0.8.0)
       mml (~> 2.4.0)
-      parslet
       unitsdb (~> 2.2.5)
 
 GEM
@@ -103,7 +102,6 @@ GEM
     parsanol (1.3.108-x86_64-darwin)
     parsanol (1.3.108-x86_64-linux)
     parsanol (1.3.108-x86_64-linux-musl)
-    parslet (2.0.0)
     rainbow (3.1.1)
     rake (13.4.2)
     rdf (3.3.4)
@@ -242,7 +240,6 @@ CHECKSUMS
   parsanol (1.3.108-x86_64-darwin) sha256=7e6c884ed24e2f06692d453d2505c4f34bf0a05d8f64e0078e589fcce0c3b10b
   parsanol (1.3.108-x86_64-linux) sha256=814e4d29d2f71f70e789683cf7149fea5b5931d2adcea79ac8b52117d09a2872
   parsanol (1.3.108-x86_64-linux-musl) sha256=dd3e9c37e90e4baf4cc95dfb9e166bb945da3ebfbc3302f2b732d81100cc1b0f
-  parslet (2.0.0) sha256=d45130695d39b43d7e6a91f4d2ec66b388a8d822bae38de9b4de9a5fbde1f606
   rainbow (3.1.1) sha256=039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a
   rake (13.4.2) sha256=cb825b2bd5f1f8e91ca37bddb4b9aaf345551b4731da62949be002fa89283701
   rdf (3.3.4) sha256=a77fa0821e5b4e2bea9fdbb7c9d980564c89d27e81979690ce5c9e6bc80859c1
@@ -260,7 +257,7 @@ CHECKSUMS
   unicode-name (1.15.1) sha256=b8f2e3ca14bc24799f84a4f74d43a3612d02a051700d88bc6ca8e3bd53cda3f6
   unicode-types (1.12.0) sha256=7e26a4352cecc2a50325a3793df834b732581ca9f25c5e29f46f3378934363f6
   unitsdb (2.2.6) sha256=2902e9dd9aff341983b6cc73f1cbe9b908b2c437c6eca36154be2b9d58873247
-  unitsml (0.6.9)
+  unitsml (0.6.10)
   yeptris (0.6.39.1-aarch64-linux) sha256=6a082c1e0c256972aa4e05e410387b7471df03823deb30d137a1a4cc7b23f105
   yeptris (0.6.39.1-aarch64-linux-musl) sha256=97fdc997cec83fe536549b56597e5c644252a6520f4e0f5404089477101606a9
   yeptris (0.6.39.1-arm-linux-eabihf) sha256=9cd83a6d3317e5910a4dfa862e6ec4d38376694a25a96260ea7ee4e871489cca
