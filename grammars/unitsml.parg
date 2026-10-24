@@ -36,7 +36,7 @@ grammar UnitsmlAscii version "0.1.0" {
 
   power = "^" slashed_number_int_exp as power_numerator
   slashed_number_int_exp = slashed_number / (lparen slashed_number_named_int_exp as int_exp rparen)
-  slashed_number_named_int_exp = (lparen slashed_number_int_exp rparen) / slashed_number_int_exp
+  slashed_number_named_int_exp = (lparen as open_paren slashed_number_int_exp rparen as close_paren) / slashed_number_int_exp
   unit_and_power = unit [power]
   sqrt_sequence = "sqrt" lparen prefixes_units_int_exp as sqrt rparen
   sqrt_dimensions = "sqrt" lparen dimension_rules_int_exp as sqrt rparen
