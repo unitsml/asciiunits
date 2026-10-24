@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "bundler/gem_tasks"
+
 require "digest"
 
 desc "Full pipeline: verify tables, oracle, artifact, corpus, run tests"

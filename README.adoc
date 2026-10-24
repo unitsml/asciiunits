@@ -87,6 +87,23 @@ Post-parse semantics (sqrt → 0.5 powers, `/` and `//` inverting exponents)
 belong to the runtime adapter, not the grammar — the grammar records
 structure only, exactly as the Parslet original does.
 
+== Installation
+
+The gem ships the artifact, tables, grammar source and conformance corpus:
+
+[source,sh]
+----
+gem install asciiunits
+----
+
+[source,ruby]
+----
+require "asciiunits"
+
+artifact = Asciiunits.load_artifact
+artifact.parse("expression", "mm*s^-2")
+----
+
 == Rebuilding
 
 The `unitsml` gem (build-time only) supplies the terminal selection and the
