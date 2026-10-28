@@ -42,13 +42,25 @@ namespace :artifact do
   desc "Fail if the committed artifact differs from a fresh compile"
   task :check do
     require "tmpdir"
+    require "json"
     fresh = nil
     Dir.mktmpdir do |dir|
       out = File.join(dir, "unitsml.json")
       sh "bundle exec parsanol parg compile grammars/unitsml.parg -o #{out}"
       fresh = File.binread(out)
     end
-    abort "artifact stale — run `rake artifact:compile` and commit" unless File.binread("artifacts/unitsml.json") == fresh
+    # The engine stamps — the compiling engine's version, its Unicode
+    # table source, and the checksum covering both — are provenance,
+    # not grammar: the bake's ruby names itself, so a byte comparison
+    # fails on every runner whose ruby patch differs (the U3 lesson).
+    # The parity view compares everything the grammar determines.
+    stamps = %w[compiler_version unicode_tables checksum]
+    parity = lambda do |text|
+      JSON.parse(text).except(*stamps)
+    end
+    unless parity.call(File.binread("artifacts/unitsml.json")) == parity.call(fresh)
+      abort "artifact stale — run `rake artifact:compile` and commit"
+    end
   end
 end
 
