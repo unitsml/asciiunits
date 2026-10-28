@@ -33,7 +33,8 @@ Gem::Specification.new do |spec|
   # The upper cap guarded the v1 tree shapes (1.3.109's emission-level
   # changes); the edition-2 artifact removes the need — the artifact
   # declares its edition and any runtime that cannot read it fails
-  # loudly at load. Tighten the floor to the release carrying
-  # parsanol-ruby#361 once its number is cut.
-  spec.add_dependency "parsanol", ">= 1.3.108"
+  # loudly at load. The floor is the release carrying the numeric
+  # editions (parsanol-ruby#361): earlier runtimes refuse the
+  # edition-2 header at parse time.
+  spec.add_dependency "parsanol", ">= 1.3.113"
 end

@@ -1,12 +1,4 @@
 GIT
-  remote: https://github.com/parsanol/parsanol-ruby.git
-  revision: 59e24afe5b3ae3c109e3f382c032f3eb5156c337
-  branch: fix/v2-trivia-class
-  specs:
-    parsanol (1.3.112)
-      rb_sys (~> 0.9.39)
-
-GIT
   remote: https://github.com/unitsml/unitsml-ruby.git
   revision: 6aff11c8b06c2b1470582aa81871bf1c51afe9ba
   branch: main
@@ -101,11 +93,17 @@ GEM
     moxml (0.5.162)
     ostruct (0.6.3)
     paint (2.3.0)
+    parsanol (1.3.113-aarch64-linux)
+    parsanol (1.3.113-aarch64-linux-musl)
+    parsanol (1.3.113-arm-linux)
+    parsanol (1.3.113-arm-linux-musl)
+    parsanol (1.3.113-arm64-darwin)
+    parsanol (1.3.113-x64-mingw-ucrt)
+    parsanol (1.3.113-x86_64-darwin)
+    parsanol (1.3.113-x86_64-linux)
+    parsanol (1.3.113-x86_64-linux-musl)
     rainbow (3.1.1)
     rake (13.4.2)
-    rake-compiler-dock (1.12.0)
-    rb_sys (0.9.130)
-      rake-compiler-dock (= 1.12.0)
     rdf (3.3.4)
       bcp47_spec (~> 0.2)
       bigdecimal (~> 3.1, >= 3.1.5)
@@ -186,7 +184,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  parsanol!
+  parsanol (~> 1.3)
   rake
   unitsml!
 
@@ -233,11 +231,17 @@ CHECKSUMS
   moxml (0.5.162) sha256=40386bc8e90e7d4f821c9b4b36d23bd32cd5bf1f8171fe103313a3fc6d6fa3fd
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
   paint (2.3.0) sha256=327d623e4038619d5bd99ae5db07973859cd78400c7f0329eea283cef8e83be5
-  parsanol (1.3.112)
+  parsanol (1.3.113-aarch64-linux) sha256=8af191b782282b358f4cd2e3500eb3fa05a020bd4be47235645d4c882b179dcd
+  parsanol (1.3.113-aarch64-linux-musl) sha256=f289de78345ba242efb1e8a44fc499aa30c346b1fd42dd82bca84a99b8a626ba
+  parsanol (1.3.113-arm-linux) sha256=d823185cfc71409f2906cd2f4bf303c5d0d7328369480b41b4c0be8c349a5c17
+  parsanol (1.3.113-arm-linux-musl) sha256=7f4fd64b56b83fa166ad23e5ff196ced00efda2c877a29dff4587c5664da8b36
+  parsanol (1.3.113-arm64-darwin) sha256=7298871a2e28359b96cbfd8ca5c09c84c4b5d95d28771d25f7f101a0755fa714
+  parsanol (1.3.113-x64-mingw-ucrt) sha256=a72861201b6d1bb4933e4fa8249f637224b208acc2b713a8d9a0f2030c9bc3cc
+  parsanol (1.3.113-x86_64-darwin) sha256=efb289d8ea29eeb84da4e02fbb8ce17cfa748ca5f758c38e42b5b92dc009feab
+  parsanol (1.3.113-x86_64-linux) sha256=ee1b19cca202c8ee33c637c5ccc2b008b35f86537ccd63604d577107212daf8b
+  parsanol (1.3.113-x86_64-linux-musl) sha256=0744b30a35a7f363880b6b461eec377dfb1dcc00ada9cbf7499eee4bfa8d399f
   rainbow (3.1.1) sha256=039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a
   rake (13.4.2) sha256=cb825b2bd5f1f8e91ca37bddb4b9aaf345551b4731da62949be002fa89283701
-  rake-compiler-dock (1.12.0) sha256=f13205c2738f3d2053afcd03491a9e4541b22a59a0bfc53fc8bc883bd8188023
-  rb_sys (0.9.130) sha256=7d486d99c1da02635515deaf9860fc5aea90bb4ab2589b2deec7fdc7d3548615
   rdf (3.3.4) sha256=a77fa0821e5b4e2bea9fdbb7c9d980564c89d27e81979690ce5c9e6bc80859c1
   rdf-turtle (3.3.1) sha256=baf3be89977a2e7abb4f9a088f24918ca6223dcfa1483979991ab7996da73647
   readline (0.0.4) sha256=6138eef17be2b98298b672c3ea63bf9cb5158d401324f26e1e84f235879c1d6a
