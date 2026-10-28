@@ -30,5 +30,10 @@ Gem::Specification.new do |spec|
 
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "parsanol", ">= 1.3.108", "< 1.3.109"
+  # The upper cap guarded the v1 tree shapes (1.3.109's emission-level
+  # changes); the edition-2 artifact removes the need — the artifact
+  # declares its edition and any runtime that cannot read it fails
+  # loudly at load. Tighten the floor to the release carrying
+  # parsanol-ruby#361 once its number is cut.
+  spec.add_dependency "parsanol", ">= 1.3.108"
 end
