@@ -3,6 +3,7 @@
 require "bundler/gem_tasks"
 
 require "digest"
+require "json"
 
 desc "Full pipeline: verify tables, oracle, artifact, corpus, run tests"
 task ci: %w[tables:check oracle:check artifact:check contracts:check test]
@@ -48,7 +49,8 @@ namespace :artifact do
       sh "bundle exec parsanol parg compile grammars/unitsml.parg -o #{out}"
       fresh = File.binread(out)
     end
-    abort "artifact stale — run `rake artifact:compile` and commit" unless File.binread("artifacts/unitsml.json") == fresh
+    committed = File.binread("artifacts/unitsml.json")
+    abort "artifact stale — run `rake artifact:compile` and commit" unless portable(committed) == portable(fresh)
   end
 end
 
@@ -74,6 +76,13 @@ end
 
 def sha(path)
   Digest::SHA256.file(path).hexdigest
+end
+
+# parsanol stamps the compiling Ruby into `unicode_tables` (rs#297) and
+# checksums the envelope with it, so both differ across the CI matrix.
+# Everything else must match a fresh compile exactly.
+def portable(json)
+  JSON.parse(json).except("unicode_tables", "checksum")
 end
 
 require "open3"
