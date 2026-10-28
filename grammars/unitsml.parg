@@ -13,7 +13,7 @@
 # sqrt, int_exp, sequence, first_set, second_set, open_paren, close_paren)
 # mirror the Parslet .as() names so consumers can map them 1:1.
 
-grammar UnitsmlAscii version "0.1.0" {
+grammar UnitsmlAscii version "0.1.0" edition 2 {
 
   ws = %x09 / %x0A / %x0B / %x0C / %x0D / %x20
   spaces = 1*ws
@@ -24,8 +24,11 @@ grammar UnitsmlAscii version "0.1.0" {
   digit = %x30-39
   forward_slashes = "//" / "/"
   extender = (forward_slashes / star) as extender
-  number = ["-"] 1*digit
-  slashed_number = (number [forward_slashes number]) as integer
+  # The signed run is one authored capture: edition 2 drops anonymous
+  # literals from the tree, so the "-" sign would vanish and the digits
+  # would name per-iteration — the capture keeps the exact v1 slice
+  # (value "-2", "1/2", offset..length) the tree readers scalarize.
+  slashed_number = ((["-"] 1*digit) [forward_slashes (["-"] 1*digit)]) as integer
   end_guard = !ANY / &(extender / lparen / rparen / spaces)
 
   unit = alt from_table "units" column "name" as unit
