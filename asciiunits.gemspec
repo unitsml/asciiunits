@@ -30,5 +30,5 @@ Gem::Specification.new do |spec|
 
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "parsanol", ">= 1.3.108", "< 1.3.109"
+  spec.add_dependency "parsanol", "~> 1.3", ">= 1.3.112"
 end
