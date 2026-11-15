@@ -36,5 +36,5 @@ Gem::Specification.new do |spec|
   # loudly at load. The floor is the release carrying the numeric
   # editions (parsanol-ruby#361): earlier runtimes refuse the
   # edition-2 header at parse time.
-  spec.add_dependency "parsanol", ">= 1.3.113"
+  spec.add_dependency "parsanol", "~> 1.5.0"
 end
