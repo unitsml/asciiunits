@@ -37,7 +37,7 @@ end
 
 abort "oracle disagrees with inputs.txt declarations — fix inputs.txt:\n#{disagreements.join("\n")}" unless disagreements.empty?
 
-File.write(OUT, JSON.pretty_generate(
+File.binwrite(OUT, JSON.pretty_generate(
   "format" => "asciiunits-oracle/v1",
   "source" => "unitsml #{spec.version}",
   "cases" => cases
