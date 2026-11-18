@@ -50,11 +50,12 @@ namespace :artifact do
       fresh = File.binread(out)
     end
     # The engine stamps — the compiling engine's version, its Unicode
-    # table source, and the checksum covering both — are provenance,
-    # not grammar: the bake's ruby names itself, so a byte comparison
+    # table source, and the checksums covering them (checksum, and the
+    # byte_checksum that parsanol 1.5 adds) — are provenance, not
+    # grammar: the bake's ruby names itself, so a byte comparison
     # fails on every runner whose ruby patch differs (the U3 lesson).
     # The parity view compares everything the grammar determines.
-    stamps = %w[compiler_version unicode_tables checksum]
+    stamps = %w[compiler_version unicode_tables checksum byte_checksum]
     parity = lambda do |text|
       JSON.parse(text).except(*stamps)
     end
