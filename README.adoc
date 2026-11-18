@@ -4,7 +4,7 @@ PARG grammar, checksummed artifact and conformance corpus for the
 `unitsml(...)` expression content of https://github.com/unitsml/unitsml-ruby[UnitsML]
 (the AsciiUnits unit-expression syntax).
 
-This repository ships **no runtime code**. It ships the contract:
+This repository ships the contract and a typed model of its parse tree:
 
 * `grammars/unitsml.parg` — the grammar source
 * `artifacts/unitsml.json` — the compiled artifact (`parsanol-tree/v2`, checksummed)
@@ -12,6 +12,8 @@ This repository ships **no runtime code**. It ships the contract:
   time; loaded from disk at parse time, see below)
 * `corpora/unitsml/` — conformance corpus, oracle-frozen against the
   unitsml-ruby Parslet parser
+* `model/asciiunits.lml.json` — the LML declarations of the typed model
+  (`lib/asciiunits/model`), with their checksums
 
 Runtime repositories (Ruby, Rust, TypeScript) load the artifact via their
 Parsanol runtime and map parse trees to their own object models. In Ruby:
@@ -82,6 +84,9 @@ Parslet `.as()` names of the original (values are slices: `value` + `offset`
 
 |`open_paren` / `close_paren`
 |Fence characters captured by the named int-exp rules
+
+|`hyphen`
+|The trailing `-` of a prefix-only expression (`p-`)
 |===
 
 Post-parse semantics (sqrt → 0.5 powers, `/` and `//` inverting exponents)
@@ -105,6 +110,38 @@ artifact = Asciiunits.load_artifact
 artifact.parse("expression", "mm*s^-2")
 ----
 
+== Typed model
+
+`Asciiunits.parse_model` parses an expression and returns an
+`Asciiunits::Model::Document`, declared with LutaML Model. Its
+`expression` holds the tree above as typed nodes: every text capture is a
+`Slice` (`value`, `offset`, `length`, `line`, `column`), and every subtree
+capture is a node class with one attribute per key it can hold.
+
+[source,ruby]
+----
+require "asciiunits"
+
+doc = Asciiunits.parse_model("m^(1/2)*s")
+doc.expression.unit.value                            # => "m"
+doc.expression.power_numerator.int_exp.integer.value # => "1/2"
+doc.expression.sequence.unit.value                   # => "s"
+----
+
+The node classes in `lib/asciiunits/model/nodes.rb` are generated from the
+static capture shapes of the artifact (`scripts/generate_model.rb`), so a
+capture the corpus never exercises is still declared. The recursive
+captures `int_exp`, `sequence` and `sqrt` share the class `Expression` with
+the tree itself. A tree key the model does not declare raises
+`Asciiunits::Model::UndeclaredCapture` instead of being dropped.
+
+`model/asciiunits.lml.json` holds the LML export of every model class
+(`Lutaml::Model::Lml.export`), and `model/asciiunits.lml.checksums.txt` their
+checksums. `rake model:check` fails if either the classes or the export is
+stale, and replays the corpus: the model built from each accepted input
+serializes to the recorded tree, each recorded tree round-trips through the
+model, and each rejected input still raises.
+
 == Rebuilding
 
 The `unitsml` gem (build-time only) supplies the terminal selection and the
@@ -117,6 +154,7 @@ rake tables:gen       # regenerate terminal tables from the unitsml gem
 rake oracle:regen     # re-baseline accept/reject against the parslet parser
 rake artifact:compile # compile with determinism check + checksums manifest
 rake contracts:regen  # replay artifact over the corpus, enforce parity
+rake model:regen      # regenerate the model classes and their LML export
 rake ci               # everything green before committing
 ----
 

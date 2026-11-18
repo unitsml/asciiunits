@@ -1,0 +1,269 @@
+{
+  "format": "asciiunits-lml/1",
+  "root": "Asciiunits::Model::Document",
+  "models": [
+    {
+      "lml": 1,
+      "model": "Asciiunits::Model::Document",
+      "attributes": [
+        {
+          "name": "expression",
+          "type": "Asciiunits::Model::Expression"
+        }
+      ],
+      "mappings": {}
+    },
+    {
+      "lml": 1,
+      "model": "Asciiunits::Model::Expression",
+      "attributes": [
+        {
+          "name": "close_paren",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "dimension",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "extender",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "first_int_exp_set",
+          "type": "Asciiunits::Model::FirstIntExpSet"
+        },
+        {
+          "name": "first_set",
+          "type": "Asciiunits::Model::FirstSet"
+        },
+        {
+          "name": "hyphen",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "implicit_extended",
+          "type": "Asciiunits::Model::ImplicitExtended"
+        },
+        {
+          "name": "int_exp",
+          "type": "Asciiunits::Model::Expression"
+        },
+        {
+          "name": "integer",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "open_paren",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "power_numerator",
+          "type": "Asciiunits::Model::PowerNumerator"
+        },
+        {
+          "name": "prefix",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "second_int_exp_set",
+          "type": "Asciiunits::Model::SecondIntExpSet"
+        },
+        {
+          "name": "second_set",
+          "type": "Asciiunits::Model::SecondSet"
+        },
+        {
+          "name": "sequence",
+          "type": "Asciiunits::Model::Expression"
+        },
+        {
+          "name": "sqrt",
+          "type": "Asciiunits::Model::Expression"
+        },
+        {
+          "name": "unit",
+          "type": "Asciiunits::Model::Slice"
+        }
+      ],
+      "mappings": {}
+    },
+    {
+      "lml": 1,
+      "model": "Asciiunits::Model::FirstIntExpSet",
+      "attributes": [
+        {
+          "name": "extender",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "int_exp",
+          "type": "Asciiunits::Model::Expression"
+        },
+        {
+          "name": "sequence",
+          "type": "Asciiunits::Model::Expression"
+        }
+      ],
+      "mappings": {}
+    },
+    {
+      "lml": 1,
+      "model": "Asciiunits::Model::FirstSet",
+      "attributes": [
+        {
+          "name": "dimension",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "extender",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "power_numerator",
+          "type": "Asciiunits::Model::PowerNumerator"
+        },
+        {
+          "name": "prefix",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "sequence",
+          "type": "Asciiunits::Model::Expression"
+        },
+        {
+          "name": "sqrt",
+          "type": "Asciiunits::Model::Expression"
+        },
+        {
+          "name": "unit",
+          "type": "Asciiunits::Model::Slice"
+        }
+      ],
+      "mappings": {}
+    },
+    {
+      "lml": 1,
+      "model": "Asciiunits::Model::ImplicitExtended",
+      "attributes": [
+        {
+          "name": "extender",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "first_int_exp_set",
+          "type": "Asciiunits::Model::FirstIntExpSet"
+        },
+        {
+          "name": "first_set",
+          "type": "Asciiunits::Model::FirstSet"
+        },
+        {
+          "name": "second_int_exp_set",
+          "type": "Asciiunits::Model::SecondIntExpSet"
+        },
+        {
+          "name": "second_set",
+          "type": "Asciiunits::Model::SecondSet"
+        }
+      ],
+      "mappings": {}
+    },
+    {
+      "lml": 1,
+      "model": "Asciiunits::Model::PowerNumerator",
+      "attributes": [
+        {
+          "name": "int_exp",
+          "type": "Asciiunits::Model::Expression"
+        },
+        {
+          "name": "integer",
+          "type": "Asciiunits::Model::Slice"
+        }
+      ],
+      "mappings": {}
+    },
+    {
+      "lml": 1,
+      "model": "Asciiunits::Model::SecondIntExpSet",
+      "attributes": [
+        {
+          "name": "extender",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "int_exp",
+          "type": "Asciiunits::Model::Expression"
+        },
+        {
+          "name": "sequence",
+          "type": "Asciiunits::Model::Expression"
+        }
+      ],
+      "mappings": {}
+    },
+    {
+      "lml": 1,
+      "model": "Asciiunits::Model::SecondSet",
+      "attributes": [
+        {
+          "name": "dimension",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "extender",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "power_numerator",
+          "type": "Asciiunits::Model::PowerNumerator"
+        },
+        {
+          "name": "prefix",
+          "type": "Asciiunits::Model::Slice"
+        },
+        {
+          "name": "sequence",
+          "type": "Asciiunits::Model::Expression"
+        },
+        {
+          "name": "sqrt",
+          "type": "Asciiunits::Model::Expression"
+        },
+        {
+          "name": "unit",
+          "type": "Asciiunits::Model::Slice"
+        }
+      ],
+      "mappings": {}
+    },
+    {
+      "lml": 1,
+      "model": "Asciiunits::Model::Slice",
+      "attributes": [
+        {
+          "name": "value",
+          "type": "string"
+        },
+        {
+          "name": "offset",
+          "type": "integer"
+        },
+        {
+          "name": "length",
+          "type": "integer"
+        },
+        {
+          "name": "line",
+          "type": "integer"
+        },
+        {
+          "name": "column",
+          "type": "integer"
+        }
+      ],
+      "mappings": {}
+    }
+  ]
+}

@@ -4,8 +4,8 @@ require "bundler/gem_tasks"
 
 require "digest"
 
-desc "Full pipeline: verify tables, oracle, artifact, corpus, run tests"
-task ci: %w[tables:check oracle:check artifact:check contracts:check test]
+desc "Full pipeline: verify tables, oracle, artifact, corpus, model, run tests"
+task ci: %w[tables:check oracle:check artifact:check contracts:check model:check test]
 
 namespace :tables do
   desc "Regenerate terminal tables from the unitsml gem"
@@ -75,6 +75,21 @@ namespace :contracts do
     before = sha("corpora/unitsml/corpus.json")
     ruby "scripts/regen_contracts.rb"
     abort "corpus stale — run `rake contracts:regen` and commit" unless before == sha("corpora/unitsml/corpus.json")
+  end
+end
+
+namespace :model do
+  desc "Regenerate the model classes and their LML export from the artifact"
+  task :regen do
+    ruby "scripts/generate_model.rb"
+    ruby "scripts/verify_lml.rb --write"
+  end
+
+  desc "Fail if the model classes or LML export are stale; replay the corpus through the model"
+  task :check do
+    ruby "scripts/generate_model.rb --check"
+    ruby "scripts/verify_lml.rb"
+    ruby "scripts/replay_model.rb"
   end
 end
 
