@@ -1,0 +1,12 @@
+# Written by scripts/verify_lml.rb: the LML checksum of every model
+# document, then the sha256 of the documents file.
+Asciiunits::Model::Document sha256:7a41cc0c1d121a01cd0963ce37b52223826d28e9a50897694d4a9b95fa7df188
+Asciiunits::Model::Expression sha256:bbf22caba1a7f385729d9bea54fbb3ea939e1ee49204177e3d437d4360d0c5d5
+Asciiunits::Model::FirstIntExpSet sha256:3df4bf92ee2e51e73a343656dbb775f198f3657fbe818675f14fcfb3b0c76f57
+Asciiunits::Model::FirstSet sha256:6ab948659e6bc47334b4500ced27637ec0195d538be82a21c7a2b6191e276de0
+Asciiunits::Model::ImplicitExtended sha256:1b83733b6ee387e871565f41b67cfe961bf075a3cd07dc64ba9c0aa9d44ce550
+Asciiunits::Model::PowerNumerator sha256:364ff98992473b36d9f903c0eee55363954c3d63aca5ef51f5a95f03e840beb1
+Asciiunits::Model::SecondIntExpSet sha256:72557eb0d00ef2b92acc18206c15498361dbef0c5aba7b84c7739cbd4a257bf1
+Asciiunits::Model::SecondSet sha256:acfc6a948f91917e068e448d0460a693aadf0b91909efe8531d1da64799d31a1
+Asciiunits::Model::Slice sha256:3b911f1422aae36cf03aa62e9e3a9323cd7cbbf2277b9dcda3c1197658b3f139
+model/asciiunits.lml.json sha256:8e1380b379542c8597c91925c024ec6fbcccf14470e90615999e86a241aaf0cd

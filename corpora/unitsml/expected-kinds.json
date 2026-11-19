@@ -1,6 +1,6 @@
 {
   "format": "asciiunits-oracle/v1",
-  "source": "unitsml 0.6.10",
+  "source": "unitsml 0.6.15",
   "cases": [
     {
       "input": "m",

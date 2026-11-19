@@ -51,5 +51,5 @@ lines = [
   *Dir["#{ROOT}/tables/*.yaml"].sort.map { |f| "tables/#{File.basename(f)} sha256:#{Digest::SHA256.file(f).hexdigest}" },
   "entries #{envelope.fetch('entries').keys.join(' ')}",
 ]
-File.write(CHECKSUMS, "#{lines.join("\n")}\n")
+File.binwrite(CHECKSUMS, "#{lines.join("\n")}\n")
 puts File.read(CHECKSUMS)

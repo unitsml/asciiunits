@@ -45,7 +45,7 @@ end
 
 abort "parity failures (#{failures.size}):\n#{failures.join("\n")}" unless failures.empty?
 
-File.write(OUT, JSON.pretty_generate(
+File.binwrite(OUT, JSON.pretty_generate(
   "grammar" => "unitsml",
   "artifact_checksum" => JSON.parse(File.binread(ARTIFACT)).fetch("checksum"),
   "cases" => cases

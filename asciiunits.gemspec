@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.metadata["rubygems_mfa_required"] = "true"
 
   spec.files = Dir.glob(
-    "{lib,grammars,tables,artifacts,suites}/**/*",
+    "{lib,grammars,tables,artifacts,suites,model}/**/*",
     base: File.expand_path(__dir__),
   ) + Dir.glob("corpora/unitsml/*", base: File.expand_path(__dir__)) +
     %w[README.adoc LICENSE.md]
@@ -37,4 +37,6 @@ Gem::Specification.new do |spec|
   # editions (parsanol-ruby#361): earlier runtimes refuse the
   # edition-2 header at parse time.
   spec.add_dependency "parsanol", "~> 1.5.0"
+  # Asciiunits.parse_model only; load_artifact does not load it.
+  spec.add_dependency "lutaml-model", "~> 0.8", ">= 0.8.162"
 end

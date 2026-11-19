@@ -15,7 +15,7 @@ ROOT = File.expand_path("..", __dir__)
 def write_table(name, tokens)
   sorted = tokens.map(&:to_s).uniq.sort_by { |t| [-t.length, t] }
   path = File.join(ROOT, "tables/#{name}.yaml")
-  File.write(path, sorted.map { |t| { "name" => t } }.to_yaml)
+  File.binwrite(path, sorted.map { |t| { "name" => t } }.to_yaml)
   puts "tables/#{name}.yaml: #{sorted.size} tokens"
 end
 

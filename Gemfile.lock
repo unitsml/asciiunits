@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/unitsml/unitsml-ruby.git
-  revision: 6aff11c8b06c2b1470582aa81871bf1c51afe9ba
+  revision: 45432eedd690b207104d9a5b47cf28260cf68ce1
   branch: main
   specs:
-    unitsml (0.6.10)
+    unitsml (0.6.15)
       asciiunits (~> 0.1)
       htmlentities
       lutaml-model (~> 0.8.0)
@@ -13,24 +13,24 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    asciiunits (0.1.2)
-      parsanol (~> 1.3)
+    asciiunits (0.1.6)
+      parsanol (>= 1.3.113)
     base64 (0.3.0)
     bcp47_spec (0.2.1)
     bigdecimal (3.3.1)
-    canon (0.3.117)
+    canon (0.3.127)
       diff-lcs
       json
-      leptris (~> 1.9.376)
-      moxml (~> 0.5.149)
+      leptris (~> 1.9.422)
+      moxml (~> 0.6.13)
       paint
       rainbow
       table_tennis
       thor (~> 1.4)
       unicode-name
-      yeptris (~> 0.6.32)
+      yeptris (~> 0.6.68)
     concurrent-ruby (1.3.8)
-    csv (3.3.6)
+    csv (3.3.7)
     diff-lcs (2.0.0)
     ebnf (2.6.0)
       base64 (~> 0.2)
@@ -50,58 +50,58 @@ GEM
     ffi (1.17.4-x86_64-linux-musl)
     fuzzy_match (2.1.0)
     htmlentities (4.4.2)
-    io-console (0.9.4)
+    io-console (0.9.5)
     json (3.1.0)
-    leptris (1.9.381.0-aarch64-linux)
+    leptris (1.9.427.0-aarch64-linux)
       ffi (~> 1.15)
-    leptris (1.9.381.0-aarch64-linux-musl)
+    leptris (1.9.427.0-aarch64-linux-musl)
       ffi (~> 1.15)
-    leptris (1.9.381.0-arm-linux)
+    leptris (1.9.427.0-arm-linux)
       ffi (~> 1.15)
-    leptris (1.9.381.0-arm-linux-musl)
+    leptris (1.9.427.0-arm-linux-musl)
       ffi (~> 1.15)
-    leptris (1.9.381.0-arm64-darwin)
+    leptris (1.9.427.0-arm64-darwin)
       ffi (~> 1.15)
-    leptris (1.9.381.0-x64-mingw-ucrt)
+    leptris (1.9.427.0-x64-mingw-ucrt)
       ffi (~> 1.15)
-    leptris (1.9.381.0-x86_64-darwin)
+    leptris (1.9.427.0-x86_64-darwin)
       ffi (~> 1.15)
-    leptris (1.9.381.0-x86_64-linux)
+    leptris (1.9.427.0-x86_64-linux)
       ffi (~> 1.15)
-    leptris (1.9.381.0-x86_64-linux-musl)
+    leptris (1.9.427.0-x86_64-linux-musl)
       ffi (~> 1.15)
     link_header (0.0.8)
     liquid (5.14.0)
       bigdecimal
       strscan (>= 3.1.1)
     logger (1.7.0)
-    lutaml-model (0.8.128)
+    lutaml-model (0.8.175)
       base64 (>= 0.1.1)
       bigdecimal
       canon
       concurrent-ruby
       liquid (>= 4.0, < 6.0)
-      moxml (~> 0.5.139)
+      moxml (~> 0.6.1)
       ostruct
       rubyzip (~> 3.7)
       thor (~> 1.4)
     matrix (0.4.3)
     memo_wise (1.13.0)
-    mml (2.4.3)
-      lutaml-model (~> 0.8.65)
-      moxml
-    moxml (0.5.162)
+    mml (2.4.8)
+      lutaml-model (~> 0.8.155)
+      moxml (~> 0.6.1)
+    moxml (0.6.16)
     ostruct (0.6.3)
     paint (2.3.0)
-    parsanol (1.3.113-aarch64-linux)
-    parsanol (1.3.113-aarch64-linux-musl)
-    parsanol (1.3.113-arm-linux)
-    parsanol (1.3.113-arm-linux-musl)
-    parsanol (1.3.113-arm64-darwin)
-    parsanol (1.3.113-x64-mingw-ucrt)
-    parsanol (1.3.113-x86_64-darwin)
-    parsanol (1.3.113-x86_64-linux)
-    parsanol (1.3.113-x86_64-linux-musl)
+    parsanol (1.5.8-aarch64-linux)
+    parsanol (1.5.8-aarch64-linux-musl)
+    parsanol (1.5.8-arm-linux)
+    parsanol (1.5.8-arm-linux-musl)
+    parsanol (1.5.8-arm64-darwin)
+    parsanol (1.5.8-x64-mingw-ucrt)
+    parsanol (1.5.8-x86_64-darwin)
+    parsanol (1.5.8-x86_64-linux)
+    parsanol (1.5.8-x86_64-linux-musl)
     rainbow (3.1.1)
     rake (13.4.2)
     rdf (3.3.4)
@@ -139,7 +139,7 @@ GEM
     unicode-name (1.15.1)
       unicode-types (~> 1.12)
     unicode-types (1.12.0)
-    unitsdb (2.2.6)
+    unitsdb (2.2.15)
       fuzzy_match
       logger
       lutaml-model (~> 0.8.0)
@@ -148,23 +148,23 @@ GEM
       rubyzip (~> 3.4)
       table_tennis (~> 0.0.7)
       thor (~> 1.0)
-    yeptris (0.6.39.1-aarch64-linux)
+    yeptris (0.6.74.0-aarch64-linux)
       ffi (~> 1.15)
-    yeptris (0.6.39.1-aarch64-linux-musl)
+    yeptris (0.6.74.0-aarch64-linux-musl)
       ffi (~> 1.15)
-    yeptris (0.6.39.1-arm-linux-eabihf)
+    yeptris (0.6.74.0-arm-linux-eabihf)
       ffi (~> 1.15)
-    yeptris (0.6.39.1-arm-linux-musleabihf)
+    yeptris (0.6.74.0-arm-linux-musleabihf)
       ffi (~> 1.15)
-    yeptris (0.6.39.1-arm64-darwin)
+    yeptris (0.6.74.0-arm64-darwin)
       ffi (~> 1.15)
-    yeptris (0.6.39.1-x64-mingw-ucrt)
+    yeptris (0.6.74.0-x64-mingw-ucrt)
       ffi (~> 1.15)
-    yeptris (0.6.39.1-x86_64-darwin)
+    yeptris (0.6.74.0-x86_64-darwin)
       ffi (~> 1.15)
-    yeptris (0.6.39.1-x86_64-linux)
+    yeptris (0.6.74.0-x86_64-linux)
       ffi (~> 1.15)
-    yeptris (0.6.39.1-x86_64-linux-musl)
+    yeptris (0.6.74.0-x86_64-linux-musl)
       ffi (~> 1.15)
 
 PLATFORMS
@@ -184,19 +184,20 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  parsanol (~> 1.3)
+  lutaml-model (~> 0.8, >= 0.8.162)
+  parsanol (~> 1.5.0)
   rake
   unitsml!
 
 CHECKSUMS
-  asciiunits (0.1.2) sha256=8850da182ac17f716209c8b6843be0fd4794acf98b7d0ee1ae17570ffddb7c4b
+  asciiunits (0.1.6) sha256=066b97d4962cdb20438c6a17bb7fed4ad872801b728a4489c191936834701a68
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bcp47_spec (0.2.1) sha256=3fd62edf96c126bd9624e4319ac74082a966081859d1ee0ef3c3041640a37810
   bigdecimal (3.3.1) sha256=eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218
   bundler (4.0.23) sha256=407ba8a1d928f412847f819aa5f8b6aef7c59fb51feb517112af8a165487287b
-  canon (0.3.117) sha256=37e9e33ec0edea95bf0b271acf1530ed7982f400c609d0186ec3fe5fffab0ad2
+  canon (0.3.127) sha256=6c1d3fa170c76a36c3382696c665034dede7c266da7c28e3a857d13bfc4e3288
   concurrent-ruby (1.3.8) sha256=b2f1be836e968ccc78ccfce277ea79c72a88633f22306782c16ff23fb415d1e1
-  csv (3.3.6) sha256=aba61e7e507a66f03d45cb1f3c4b6359861c3504038b422962875dce099e4456
+  csv (3.3.7) sha256=15a3f16f6628da8664d455eb634e7f22031bcf53044923caf56975109e71b9f8
   diff-lcs (2.0.0) sha256=708a5d52ec2945b50f8f53a181174aa1ef2c496edf81c05957fe956dabb363d5
   ebnf (2.6.0) sha256=e746a316caa885cc45e243dc33efc194943956760bc9bc13948de1732fbcf63e
   ffi (1.17.4-aarch64-linux-gnu) sha256=b208f06f91ffd8f5e1193da3cae3d2ccfc27fc36fba577baf698d26d91c080df
@@ -210,36 +211,36 @@ CHECKSUMS
   ffi (1.17.4-x86_64-linux-musl) sha256=3fdf9888483de005f8ef8d1cf2d3b20d86626af206cbf780f6a6a12439a9c49e
   fuzzy_match (2.1.0) sha256=e97e25d0eaee48a5f77ed970d007c7b6ff3c6a6858303fead2d1986859204dfc
   htmlentities (4.4.2) sha256=bbafbdf69f2eca9262be4efef7e43e6a1de54c95eb600f26984f71d2fe96c5c3
-  io-console (0.9.4) sha256=a403304f32928ee85e56d457b4612ca43f2703b561a3258844992bd24085fbb1
+  io-console (0.9.5) sha256=83dd9bbf4c4680416629245b39cd4212eb5f4d9a4ea91804870c1f6b846414d5
   json (3.1.0) sha256=3ce7ccf8fde58960177a3a756c31f292a4c1e1dedee884547096a5b0604e3bd8
-  leptris (1.9.381.0-aarch64-linux) sha256=63c1595a9fdaf058f9139cfe95c37324eff5fb6a5437c5901b197564d2392825
-  leptris (1.9.381.0-aarch64-linux-musl) sha256=264546452a3737afd48cc718820f4b1ef763c02dfe8d0b657de3c1816cdf0d71
-  leptris (1.9.381.0-arm-linux) sha256=1a9514c72edc402109ad731e4f1942d75ff4e326faafd4e1e266d693de1eb48a
-  leptris (1.9.381.0-arm-linux-musl) sha256=9cb161ed675be6b31e262ddb0d93e08da15105f8b49fc1c78eab6f1beae1b9db
-  leptris (1.9.381.0-arm64-darwin) sha256=2cbe7f74ab952d8cf5fdba10cdb391fbcbe4964e2054f6d3737616fcd513b8a5
-  leptris (1.9.381.0-x64-mingw-ucrt) sha256=32de70a04f6a7f3a2d3c5e8ac9209c8b7efba0c1cfc08c6b4fdb9161174e46bb
-  leptris (1.9.381.0-x86_64-darwin) sha256=68fad1a13963bc2e112f19d7430839b4c566c4738152ef8b046f7057c92dcc73
-  leptris (1.9.381.0-x86_64-linux) sha256=a3ef7c16fc0a0c2f1e418dd4f71f889062ca3da2fa36f525b6b242424b71be32
-  leptris (1.9.381.0-x86_64-linux-musl) sha256=02022320f231be9883ab55838f9d62e2b94262d6de5897f78bbe8d6e866ba116
+  leptris (1.9.427.0-aarch64-linux) sha256=78ad6be8f07dbf16ec42528e8a3c927bde6d9a9f7d3aa2cbb37a71002cf2171d
+  leptris (1.9.427.0-aarch64-linux-musl) sha256=7b9b76c63ad00763a0d8d5b4e68f992c03274914bbd844f55302a44e2e544234
+  leptris (1.9.427.0-arm-linux) sha256=cc7013a3eadd66e8c2f8cce5c41503a7914ed505e98424948b2ad46a6bf2e12b
+  leptris (1.9.427.0-arm-linux-musl) sha256=03653d043b6f6ef0ea9bb5cd9ec9f4b9df3a07f02262f5b6bb77001959066e96
+  leptris (1.9.427.0-arm64-darwin) sha256=7fc4988655b0fb60074b4f1758a05f8805c12b1343951a46de72bbc0c8efbca0
+  leptris (1.9.427.0-x64-mingw-ucrt) sha256=4774f981b27cb96775f394bb1ee92468cd96f9913a1f4327cab01afeb83a8877
+  leptris (1.9.427.0-x86_64-darwin) sha256=c03e3dca72da66247f56e1586c578ba88f52948f1c96bb817ba2b885bf9f0f6a
+  leptris (1.9.427.0-x86_64-linux) sha256=1ab8cfbb324424bedc6dbb9daf8c0f84bfaae2857a9590dc33d023856f97ece6
+  leptris (1.9.427.0-x86_64-linux-musl) sha256=db81e41b6464be74253294ab94753d15bd2419d1385e0e139948913bdb1af667
   link_header (0.0.8) sha256=15c65ce43b29f739b30d05e5f25c22c23797e89cf6f905dbb595fb4c70cb55f9
   liquid (5.14.0) sha256=e1020c2b2ee58c7a4d3bfdc7a331537bd27a783353748bff0bf27c6ac0c17065
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
-  lutaml-model (0.8.128) sha256=baf440d09f7a755be9bd39fdfffc9dc121f9d295e36d02b35791b2bed095c1db
+  lutaml-model (0.8.175) sha256=b9be3d8c7247839e6ff03c8b5a5e9644128a1ea537fa4338d68d6678b93f20fe
   matrix (0.4.3) sha256=a0d5ab7ddcc1973ff690ab361b67f359acbb16958d1dc072b8b956a286564c5b
   memo_wise (1.13.0) sha256=30220c38c4cef410849bc73553c58664dc2c91c6379e4a1df22aea02358b716b
-  mml (2.4.3) sha256=edcc39dad52b1f5caa1c2bd2197a9aa23410a054b5de2cf3545ec189d3194752
-  moxml (0.5.162) sha256=40386bc8e90e7d4f821c9b4b36d23bd32cd5bf1f8171fe103313a3fc6d6fa3fd
+  mml (2.4.8) sha256=0285cf6f6ccf688b4fdaf091ccaba6c8bd835d4a62763c689b53ff85c5172bec
+  moxml (0.6.16) sha256=350513f651916c30f5889f8954e7eb03f3463283800852a15eff8fd76b112c26
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
   paint (2.3.0) sha256=327d623e4038619d5bd99ae5db07973859cd78400c7f0329eea283cef8e83be5
-  parsanol (1.3.113-aarch64-linux) sha256=8af191b782282b358f4cd2e3500eb3fa05a020bd4be47235645d4c882b179dcd
-  parsanol (1.3.113-aarch64-linux-musl) sha256=f289de78345ba242efb1e8a44fc499aa30c346b1fd42dd82bca84a99b8a626ba
-  parsanol (1.3.113-arm-linux) sha256=d823185cfc71409f2906cd2f4bf303c5d0d7328369480b41b4c0be8c349a5c17
-  parsanol (1.3.113-arm-linux-musl) sha256=7f4fd64b56b83fa166ad23e5ff196ced00efda2c877a29dff4587c5664da8b36
-  parsanol (1.3.113-arm64-darwin) sha256=7298871a2e28359b96cbfd8ca5c09c84c4b5d95d28771d25f7f101a0755fa714
-  parsanol (1.3.113-x64-mingw-ucrt) sha256=a72861201b6d1bb4933e4fa8249f637224b208acc2b713a8d9a0f2030c9bc3cc
-  parsanol (1.3.113-x86_64-darwin) sha256=efb289d8ea29eeb84da4e02fbb8ce17cfa748ca5f758c38e42b5b92dc009feab
-  parsanol (1.3.113-x86_64-linux) sha256=ee1b19cca202c8ee33c637c5ccc2b008b35f86537ccd63604d577107212daf8b
-  parsanol (1.3.113-x86_64-linux-musl) sha256=0744b30a35a7f363880b6b461eec377dfb1dcc00ada9cbf7499eee4bfa8d399f
+  parsanol (1.5.8-aarch64-linux) sha256=4431a51b586f7129d4dbf8ad12674b5cbc97e159ad7264ff174cadd5b0e4c72e
+  parsanol (1.5.8-aarch64-linux-musl) sha256=37a5e40a182733ba395e82a6b2a6dec575741d9f89bbf532317d27ba15e706bc
+  parsanol (1.5.8-arm-linux) sha256=d0d88f7d20580f0da0ea3d84f1aa74e4d849ccd6fd8c4f5d644e3ec4074061a4
+  parsanol (1.5.8-arm-linux-musl) sha256=4342855f42fa7d3ae2561d587ab44e81746a0ebf5ff7161239abcdc1a7170e24
+  parsanol (1.5.8-arm64-darwin) sha256=6665b454a100b176ca29c0d13323ee1f58d5e12374ba7fdf68a27b46f5864176
+  parsanol (1.5.8-x64-mingw-ucrt) sha256=33fca25ad975b0f2a6ca2665b79c7fc437a7c0a047721a1008eaee94f30d077c
+  parsanol (1.5.8-x86_64-darwin) sha256=faf35733d3806071696cb12224b8c9e3632ff45574543f22c7e18c7c6205f735
+  parsanol (1.5.8-x86_64-linux) sha256=8b916c5e7aebffdfbd8c5c8f1e658969fc6eb389940842e844903e7f93cc127f
+  parsanol (1.5.8-x86_64-linux-musl) sha256=763d55fe840e4dbe83b0626b28ddde1aff1f306c68325d884a79814f123fbba2
   rainbow (3.1.1) sha256=039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a
   rake (13.4.2) sha256=cb825b2bd5f1f8e91ca37bddb4b9aaf345551b4731da62949be002fa89283701
   rdf (3.3.4) sha256=a77fa0821e5b4e2bea9fdbb7c9d980564c89d27e81979690ce5c9e6bc80859c1
@@ -256,17 +257,17 @@ CHECKSUMS
   unicode-emoji (4.3.0) sha256=11c02fa73290378c066bb0562cd4c87d8e1b706fbbe0059ca12746a4244de8ce
   unicode-name (1.15.1) sha256=b8f2e3ca14bc24799f84a4f74d43a3612d02a051700d88bc6ca8e3bd53cda3f6
   unicode-types (1.12.0) sha256=7e26a4352cecc2a50325a3793df834b732581ca9f25c5e29f46f3378934363f6
-  unitsdb (2.2.6) sha256=2902e9dd9aff341983b6cc73f1cbe9b908b2c437c6eca36154be2b9d58873247
-  unitsml (0.6.10)
-  yeptris (0.6.39.1-aarch64-linux) sha256=6a082c1e0c256972aa4e05e410387b7471df03823deb30d137a1a4cc7b23f105
-  yeptris (0.6.39.1-aarch64-linux-musl) sha256=97fdc997cec83fe536549b56597e5c644252a6520f4e0f5404089477101606a9
-  yeptris (0.6.39.1-arm-linux-eabihf) sha256=9cd83a6d3317e5910a4dfa862e6ec4d38376694a25a96260ea7ee4e871489cca
-  yeptris (0.6.39.1-arm-linux-musleabihf) sha256=8f619937f023e381d48b84228b160d9045bbedac737e4d4cf2f7aa97d848e2d8
-  yeptris (0.6.39.1-arm64-darwin) sha256=13b476ffb1a163366e12c34c2281ea68d4960b3c6625775c2db7e137b5b08ad8
-  yeptris (0.6.39.1-x64-mingw-ucrt) sha256=f63051022b51cbefa055a3c4e8d54113f0f034659d9f22dd66fbd719f26670b5
-  yeptris (0.6.39.1-x86_64-darwin) sha256=ca69185c18c02adaa4d7a1c17ffcde1c531d0faacc714b18f9d6310566313c77
-  yeptris (0.6.39.1-x86_64-linux) sha256=8769c5566e8a994cfb769cd817dfef74ec6e58dc917dab0cde4921020a296a41
-  yeptris (0.6.39.1-x86_64-linux-musl) sha256=a30610e3632201f3db023c9ee9660798705e3e476a10c96c7294dc6016556969
+  unitsdb (2.2.15) sha256=605eedf11d18dbaa386a1f0b0a8e9d86fd026171e0b3fdfb4cf59e4fdef284a3
+  unitsml (0.6.15)
+  yeptris (0.6.74.0-aarch64-linux) sha256=80a864009c472a7792ca5557b75f6f82e53f48d6565ee8bdc3b54afad4a6ce68
+  yeptris (0.6.74.0-aarch64-linux-musl) sha256=c906eef6a58b5d5b4ecf137d5875018117bf87236bd15da5556b2e98e86cf516
+  yeptris (0.6.74.0-arm-linux-eabihf) sha256=2b279076d93fd142d2e8648d3b2e1cac4b7786bb41028fd47e63dac6df123094
+  yeptris (0.6.74.0-arm-linux-musleabihf) sha256=7bd501137a25ae22ea8c865cd104c69bb045ab21ffdc99440dc7a6db859cdedc
+  yeptris (0.6.74.0-arm64-darwin) sha256=27700d31ee712b918567383c8351f632e2911fe7efc8c9ce114c1d8ae02ab559
+  yeptris (0.6.74.0-x64-mingw-ucrt) sha256=6e1082e70b04aaa6c93c38c0cc9a1e6bbd219dc9f0fe019641edf80dba297ab0
+  yeptris (0.6.74.0-x86_64-darwin) sha256=0078d6ac2969d479df9c614ad0f4d254c3d7ee963da168de3d6c28c7b8ee3581
+  yeptris (0.6.74.0-x86_64-linux) sha256=2ea97c2b6ce7db084028efe8f8fe8751a653cbade2d884a9cb480e670c259747
+  yeptris (0.6.74.0-x86_64-linux-musl) sha256=0b4f26fdb6c7e612f8cd16e106bdaf549431220b425bd06bc33ca93a68b03a5e
 
 BUNDLED WITH
   4.0.23

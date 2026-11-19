@@ -1,6 +1,6 @@
 {
   "grammar": "unitsml",
-  "artifact_checksum": "sha256:aa22618c80dc02f3fe1edf2c798dbe34aceae5f4d84524ff98f76a2b91af151d",
+  "artifact_checksum": "sha256:3a5d423ea975d46e9ab4b98a652e9276849f540226466dbacdd5001b2f6a5016",
   "cases": [
     {
       "input": "m",
@@ -12,8 +12,7 @@
           "length": 1,
           "line": 1,
           "column": 1
-        },
-        "end_guard": null
+        }
       }
     },
     {
@@ -66,8 +65,7 @@
           "length": 4,
           "line": 1,
           "column": 1
-        },
-        "end_guard": null
+        }
       }
     },
     {
@@ -131,8 +129,7 @@
               "line": 1,
               "column": 6
             }
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -140,13 +137,6 @@
       "input": "sqrt(Hz)",
       "kind": "accept",
       "parsanol_tree": {
-        "lparen": {
-          "value": "(",
-          "offset": 4,
-          "length": 1,
-          "line": 1,
-          "column": 5
-        },
         "sqrt": {
           "unit": {
             "value": "Hz",
@@ -154,15 +144,7 @@
             "length": 2,
             "line": 1,
             "column": 6
-          },
-          "end_guard": null
-        },
-        "rparen": {
-          "value": ")",
-          "offset": 7,
-          "length": 1,
-          "line": 1,
-          "column": 8
+          }
         }
       }
     },
@@ -185,13 +167,6 @@
           "column": 2
         },
         "sequence": {
-          "lparen": {
-            "value": "(",
-            "offset": 2,
-            "length": 1,
-            "line": 1,
-            "column": 3
-          },
           "int_exp": {
             "prefix": {
               "value": "k",
@@ -221,16 +196,8 @@
                 "length": 1,
                 "line": 1,
                 "column": 7
-              },
-              "end_guard": null
+              }
             }
-          },
-          "rparen": {
-            "value": ")",
-            "offset": 7,
-            "length": 1,
-            "line": 1,
-            "column": 8
           }
         }
       }
@@ -323,8 +290,7 @@
               "line": 1,
               "column": 13
             }
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -362,8 +328,7 @@
               "line": 1,
               "column": 5
             }
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -401,8 +366,7 @@
               "line": 1,
               "column": 5
             }
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -453,8 +417,7 @@
               "length": 1,
               "line": 1,
               "column": 6
-            },
-            "end_guard": null
+            }
           }
         }
       }
@@ -567,13 +530,6 @@
             "column": 5
           },
           "power_numerator": {
-            "lparen": {
-              "value": "(",
-              "offset": 6,
-              "length": 1,
-              "line": 1,
-              "column": 7
-            },
             "int_exp": {
               "integer": {
                 "value": "-2",
@@ -582,13 +538,6 @@
                 "line": 1,
                 "column": 8
               }
-            },
-            "rparen": {
-              "value": ")",
-              "offset": 9,
-              "length": 1,
-              "line": 1,
-              "column": 10
             }
           }
         }
@@ -653,13 +602,6 @@
       "parsanol_tree": {
         "implicit_extended": {
           "first_int_exp_set": {
-            "lparen": {
-              "value": "(",
-              "offset": 0,
-              "length": 1,
-              "line": 1,
-              "column": 1
-            },
             "int_exp": {
               "unit": {
                 "value": "m",
@@ -667,25 +609,10 @@
                 "length": 1,
                 "line": 1,
                 "column": 2
-              },
-              "end_guard": null
-            },
-            "rparen": {
-              "value": ")",
-              "offset": 2,
-              "length": 1,
-              "line": 1,
-              "column": 3
+              }
             }
           },
           "second_int_exp_set": {
-            "lparen": {
-              "value": "(",
-              "offset": 3,
-              "length": 1,
-              "line": 1,
-              "column": 4
-            },
             "int_exp": {
               "unit": {
                 "value": "s",
@@ -693,15 +620,7 @@
                 "length": 1,
                 "line": 1,
                 "column": 5
-              },
-              "end_guard": null
-            },
-            "rparen": {
-              "value": ")",
-              "offset": 5,
-              "length": 1,
-              "line": 1,
-              "column": 6
+              }
             }
           }
         }
@@ -719,17 +638,9 @@
               "length": 1,
               "line": 1,
               "column": 1
-            },
-            "end_guard": null
+            }
           },
           "second_int_exp_set": {
-            "lparen": {
-              "value": "(",
-              "offset": 1,
-              "length": 1,
-              "line": 1,
-              "column": 2
-            },
             "int_exp": {
               "unit": {
                 "value": "s",
@@ -737,15 +648,7 @@
                 "length": 1,
                 "line": 1,
                 "column": 3
-              },
-              "end_guard": null
-            },
-            "rparen": {
-              "value": ")",
-              "offset": 3,
-              "length": 1,
-              "line": 1,
-              "column": 4
+              }
             }
           }
         }
@@ -763,8 +666,7 @@
               "length": 1,
               "line": 1,
               "column": 1
-            },
-            "end_guard": null
+            }
           },
           "extender": {
             "value": " ",
@@ -780,8 +682,7 @@
               "length": 1,
               "line": 1,
               "column": 3
-            },
-            "end_guard": null
+            }
           }
         }
       }
@@ -797,7 +698,6 @@
           "line": 1,
           "column": 1
         },
-        "end_guard": null,
         "extender": {
           "value": "*",
           "offset": 2,
@@ -812,8 +712,7 @@
             "length": 1,
             "line": 1,
             "column": 4
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -842,8 +741,7 @@
             "length": 1,
             "line": 1,
             "column": 4
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -859,8 +757,7 @@
               "length": 1,
               "line": 1,
               "column": 1
-            },
-            "end_guard": null
+            }
           },
           "extender": {
             "value": "  ",
@@ -876,8 +773,7 @@
               "length": 1,
               "line": 1,
               "column": 4
-            },
-            "end_guard": null
+            }
           }
         }
       }
@@ -893,7 +789,6 @@
           "line": 1,
           "column": 1
         },
-        "end_guard": null,
         "extender": {
           "value": "*",
           "offset": 2,
@@ -908,8 +803,7 @@
             "length": 1,
             "line": 1,
             "column": 5
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -945,8 +839,7 @@
             "length": 1,
             "line": 1,
             "column": 5
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -984,8 +877,7 @@
             "length": 1,
             "line": 1,
             "column": 7
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -1001,8 +893,7 @@
               "length": 1,
               "line": 1,
               "column": 1
-            },
-            "end_guard": null
+            }
           },
           "extender": {
             "value": " ",
@@ -1012,13 +903,6 @@
             "column": 2
           },
           "second_set": {
-            "lparen": {
-              "value": "(",
-              "offset": 6,
-              "length": 1,
-              "line": 1,
-              "column": 7
-            },
             "sqrt": {
               "unit": {
                 "value": "Hz",
@@ -1026,15 +910,7 @@
                 "length": 2,
                 "line": 1,
                 "column": 8
-              },
-              "end_guard": null
-            },
-            "rparen": {
-              "value": ")",
-              "offset": 9,
-              "length": 1,
-              "line": 1,
-              "column": 10
+              }
             }
           }
         }
@@ -1044,13 +920,6 @@
       "input": "(m^2*s^-1)//kg",
       "kind": "accept",
       "parsanol_tree": {
-        "lparen": {
-          "value": "(",
-          "offset": 0,
-          "length": 1,
-          "line": 1,
-          "column": 1
-        },
         "int_exp": {
           "unit": {
             "value": "m",
@@ -1091,16 +960,8 @@
                 "line": 1,
                 "column": 8
               }
-            },
-            "end_guard": null
+            }
           }
-        },
-        "rparen": {
-          "value": ")",
-          "offset": 9,
-          "length": 1,
-          "line": 1,
-          "column": 10
         },
         "extender": {
           "value": "//",
@@ -1144,13 +1005,6 @@
       "input": "(dim_L*dim_M)/dim_T^2",
       "kind": "accept",
       "parsanol_tree": {
-        "lparen": {
-          "value": "(",
-          "offset": 0,
-          "length": 1,
-          "line": 1,
-          "column": 1
-        },
         "int_exp": {
           "dimension": {
             "value": "dim_L",
@@ -1175,13 +1029,6 @@
               "column": 8
             }
           }
-        },
-        "rparen": {
-          "value": ")",
-          "offset": 12,
-          "length": 1,
-          "line": 1,
-          "column": 13
         },
         "extender": {
           "value": "/",
@@ -1214,13 +1061,6 @@
       "input": "sqrt(dim_M)",
       "kind": "accept",
       "parsanol_tree": {
-        "lparen": {
-          "value": "(",
-          "offset": 4,
-          "length": 1,
-          "line": 1,
-          "column": 5
-        },
         "sqrt": {
           "dimension": {
             "value": "dim_M",
@@ -1229,13 +1069,6 @@
             "line": 1,
             "column": 6
           }
-        },
-        "rparen": {
-          "value": ")",
-          "offset": 10,
-          "length": 1,
-          "line": 1,
-          "column": 11
         }
       }
     },
@@ -1243,13 +1076,6 @@
       "input": "sqrt(m*s)",
       "kind": "accept",
       "parsanol_tree": {
-        "lparen": {
-          "value": "(",
-          "offset": 4,
-          "length": 1,
-          "line": 1,
-          "column": 5
-        },
         "sqrt": {
           "unit": {
             "value": "m",
@@ -1272,16 +1098,8 @@
               "length": 1,
               "line": 1,
               "column": 8
-            },
-            "end_guard": null
+            }
           }
-        },
-        "rparen": {
-          "value": ")",
-          "offset": 8,
-          "length": 1,
-          "line": 1,
-          "column": 9
         }
       }
     },
@@ -1289,21 +1107,7 @@
       "input": "sqrt((m))",
       "kind": "accept",
       "parsanol_tree": {
-        "lparen": {
-          "value": "(",
-          "offset": 4,
-          "length": 1,
-          "line": 1,
-          "column": 5
-        },
         "sqrt": {
-          "lparen": {
-            "value": "(",
-            "offset": 5,
-            "length": 1,
-            "line": 1,
-            "column": 6
-          },
           "int_exp": {
             "unit": {
               "value": "m",
@@ -1311,23 +1115,8 @@
               "length": 1,
               "line": 1,
               "column": 7
-            },
-            "end_guard": null
-          },
-          "rparen": {
-            "value": ")",
-            "offset": 7,
-            "length": 1,
-            "line": 1,
-            "column": 8
+            }
           }
-        },
-        "rparen": {
-          "value": ")",
-          "offset": 8,
-          "length": 1,
-          "line": 1,
-          "column": 9
         }
       }
     },
@@ -1335,21 +1124,7 @@
       "input": "(sqrt(m))",
       "kind": "accept",
       "parsanol_tree": {
-        "lparen": {
-          "value": "(",
-          "offset": 0,
-          "length": 1,
-          "line": 1,
-          "column": 1
-        },
         "int_exp": {
-          "lparen": {
-            "value": "(",
-            "offset": 5,
-            "length": 1,
-            "line": 1,
-            "column": 6
-          },
           "sqrt": {
             "unit": {
               "value": "m",
@@ -1357,23 +1132,8 @@
               "length": 1,
               "line": 1,
               "column": 7
-            },
-            "end_guard": null
-          },
-          "rparen": {
-            "value": ")",
-            "offset": 7,
-            "length": 1,
-            "line": 1,
-            "column": 8
+            }
           }
-        },
-        "rparen": {
-          "value": ")",
-          "offset": 8,
-          "length": 1,
-          "line": 1,
-          "column": 9
         }
       }
     },
@@ -1381,13 +1141,6 @@
       "input": "sqrt(m)s",
       "kind": "accept",
       "parsanol_tree": {
-        "lparen": {
-          "value": "(",
-          "offset": 4,
-          "length": 1,
-          "line": 1,
-          "column": 5
-        },
         "sqrt": {
           "unit": {
             "value": "m",
@@ -1395,15 +1148,7 @@
             "length": 1,
             "line": 1,
             "column": 6
-          },
-          "end_guard": null
-        },
-        "rparen": {
-          "value": ")",
-          "offset": 6,
-          "length": 1,
-          "line": 1,
-          "column": 7
+          }
         },
         "sequence": {
           "unit": {
@@ -1412,8 +1157,7 @@
             "length": 1,
             "line": 1,
             "column": 8
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -1451,8 +1195,7 @@
             "length": 1,
             "line": 1,
             "column": 5
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -1475,8 +1218,7 @@
             "line": 1,
             "column": 3
           }
-        },
-        "end_guard": null
+        }
       }
     },
     {
@@ -1491,13 +1233,6 @@
           "column": 1
         },
         "power_numerator": {
-          "lparen": {
-            "value": "(",
-            "offset": 2,
-            "length": 1,
-            "line": 1,
-            "column": 3
-          },
           "int_exp": {
             "integer": {
               "value": "-1/2",
@@ -1506,16 +1241,8 @@
               "line": 1,
               "column": 4
             }
-          },
-          "rparen": {
-            "value": ")",
-            "offset": 7,
-            "length": 1,
-            "line": 1,
-            "column": 8
           }
-        },
-        "end_guard": null
+        }
       }
     },
     {
@@ -1530,13 +1257,6 @@
           "column": 1
         },
         "power_numerator": {
-          "lparen": {
-            "value": "(",
-            "offset": 2,
-            "length": 1,
-            "line": 1,
-            "column": 3
-          },
           "int_exp": {
             "integer": {
               "value": "1/2",
@@ -1545,16 +1265,8 @@
               "line": 1,
               "column": 4
             }
-          },
-          "rparen": {
-            "value": ")",
-            "offset": 6,
-            "length": 1,
-            "line": 1,
-            "column": 7
           }
-        },
-        "end_guard": null
+        }
       }
     },
     {
@@ -1563,13 +1275,6 @@
       "parsanol_tree": {
         "implicit_extended": {
           "first_int_exp_set": {
-            "lparen": {
-              "value": "(",
-              "offset": 0,
-              "length": 1,
-              "line": 1,
-              "column": 1
-            },
             "int_exp": {
               "unit": {
                 "value": "m",
@@ -1577,25 +1282,10 @@
                 "length": 1,
                 "line": 1,
                 "column": 2
-              },
-              "end_guard": null
-            },
-            "rparen": {
-              "value": ")",
-              "offset": 2,
-              "length": 1,
-              "line": 1,
-              "column": 3
+              }
             }
           },
           "second_int_exp_set": {
-            "lparen": {
-              "value": "(",
-              "offset": 3,
-              "length": 1,
-              "line": 1,
-              "column": 4
-            },
             "int_exp": {
               "unit": {
                 "value": "s",
@@ -1603,26 +1293,11 @@
                 "length": 1,
                 "line": 1,
                 "column": 5
-              },
-              "end_guard": null
-            },
-            "rparen": {
-              "value": ")",
-              "offset": 5,
-              "length": 1,
-              "line": 1,
-              "column": 6
+              }
             }
           }
         },
         "sequence": {
-          "lparen": {
-            "value": "(",
-            "offset": 6,
-            "length": 1,
-            "line": 1,
-            "column": 7
-          },
           "int_exp": {
             "unit": {
               "value": "A",
@@ -1630,15 +1305,7 @@
               "length": 1,
               "line": 1,
               "column": 8
-            },
-            "end_guard": null
-          },
-          "rparen": {
-            "value": ")",
-            "offset": 8,
-            "length": 1,
-            "line": 1,
-            "column": 9
+            }
           }
         }
       }
@@ -1661,8 +1328,7 @@
             "length": 1,
             "line": 1,
             "column": 2
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -1691,8 +1357,7 @@
             "length": 1,
             "line": 1,
             "column": 3
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -1729,13 +1394,6 @@
       "input": "((m))",
       "kind": "accept",
       "parsanol_tree": {
-        "lparen": {
-          "value": "(",
-          "offset": 0,
-          "length": 1,
-          "line": 1,
-          "column": 1
-        },
         "int_exp": {
           "int_exp": {
             "open_paren": {
@@ -1752,8 +1410,7 @@
                 "length": 1,
                 "line": 1,
                 "column": 3
-              },
-              "end_guard": null
+              }
             },
             "close_paren": {
               "value": ")",
@@ -1763,13 +1420,6 @@
               "column": 4
             }
           }
-        },
-        "rparen": {
-          "value": ")",
-          "offset": 4,
-          "length": 1,
-          "line": 1,
-          "column": 5
         }
       }
     },
@@ -1809,13 +1459,6 @@
       "kind": "accept",
       "parsanol_tree": {
         "first_int_exp_set": {
-          "lparen": {
-            "value": "(",
-            "offset": 0,
-            "length": 1,
-            "line": 1,
-            "column": 1
-          },
           "int_exp": {
             "dimension": {
               "value": "dim_L",
@@ -1824,23 +1467,9 @@
               "line": 1,
               "column": 2
             }
-          },
-          "rparen": {
-            "value": ")",
-            "offset": 6,
-            "length": 1,
-            "line": 1,
-            "column": 7
           }
         },
         "second_int_exp_set": {
-          "lparen": {
-            "value": "(",
-            "offset": 7,
-            "length": 1,
-            "line": 1,
-            "column": 8
-          },
           "int_exp": {
             "dimension": {
               "value": "dim_M",
@@ -1849,13 +1478,6 @@
               "line": 1,
               "column": 9
             }
-          },
-          "rparen": {
-            "value": ")",
-            "offset": 13,
-            "length": 1,
-            "line": 1,
-            "column": 14
           }
         }
       }
@@ -1864,13 +1486,6 @@
       "input": "(dim_L)*dim_M",
       "kind": "accept",
       "parsanol_tree": {
-        "lparen": {
-          "value": "(",
-          "offset": 0,
-          "length": 1,
-          "line": 1,
-          "column": 1
-        },
         "int_exp": {
           "dimension": {
             "value": "dim_L",
@@ -1879,13 +1494,6 @@
             "line": 1,
             "column": 2
           }
-        },
-        "rparen": {
-          "value": ")",
-          "offset": 6,
-          "length": 1,
-          "line": 1,
-          "column": 7
         },
         "extender": {
           "value": "*",
@@ -2012,8 +1620,7 @@
               "line": 1,
               "column": 7
             }
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -2051,8 +1658,7 @@
               "line": 1,
               "column": 5
             }
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -2120,8 +1726,7 @@
             "line": 1,
             "column": 4
           }
-        },
-        "end_guard": null
+        }
       }
     },
     {
@@ -2203,8 +1808,7 @@
           "length": 3,
           "line": 1,
           "column": 1
-        },
-        "end_guard": null
+        }
       }
     },
     {
@@ -2241,8 +1845,7 @@
               "line": 1,
               "column": 7
             }
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -2295,8 +1898,7 @@
                 "line": 1,
                 "column": 9
               }
-            },
-            "end_guard": null
+            }
           }
         }
       }
@@ -2333,8 +1935,7 @@
             "length": 1,
             "line": 1,
             "column": 4
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -2396,8 +1997,7 @@
                 "line": 1,
                 "column": 10
               }
-            },
-            "end_guard": null
+            }
           }
         }
       }
@@ -2406,13 +2006,6 @@
       "input": "sqrt(m*s^-1)",
       "kind": "accept",
       "parsanol_tree": {
-        "lparen": {
-          "value": "(",
-          "offset": 4,
-          "length": 1,
-          "line": 1,
-          "column": 5
-        },
         "sqrt": {
           "unit": {
             "value": "m",
@@ -2444,16 +2037,8 @@
                 "line": 1,
                 "column": 10
               }
-            },
-            "end_guard": null
+            }
           }
-        },
-        "rparen": {
-          "value": ")",
-          "offset": 11,
-          "length": 1,
-          "line": 1,
-          "column": 12
         }
       }
     },
@@ -2476,13 +2061,6 @@
           "column": 2
         },
         "power_numerator": {
-          "lparen": {
-            "value": "(",
-            "offset": 3,
-            "length": 1,
-            "line": 1,
-            "column": 4
-          },
           "int_exp": {
             "integer": {
               "value": "3",
@@ -2491,13 +2069,6 @@
               "line": 1,
               "column": 5
             }
-          },
-          "rparen": {
-            "value": ")",
-            "offset": 5,
-            "length": 1,
-            "line": 1,
-            "column": 6
           }
         }
       }
@@ -2561,8 +2132,7 @@
                 "length": 1,
                 "line": 1,
                 "column": 13
-              },
-              "end_guard": null
+              }
             }
           }
         }
@@ -2572,13 +2142,6 @@
       "input": "(a_year*s^-1)",
       "kind": "accept",
       "parsanol_tree": {
-        "lparen": {
-          "value": "(",
-          "offset": 0,
-          "length": 1,
-          "line": 1,
-          "column": 1
-        },
         "int_exp": {
           "unit": {
             "value": "a_year",
@@ -2610,16 +2173,8 @@
                 "line": 1,
                 "column": 11
               }
-            },
-            "end_guard": null
+            }
           }
-        },
-        "rparen": {
-          "value": ")",
-          "offset": 12,
-          "length": 1,
-          "line": 1,
-          "column": 13
         }
       }
     },
@@ -2631,21 +2186,7 @@
       "input": "sqrt(sqrt(m))",
       "kind": "accept",
       "parsanol_tree": {
-        "lparen": {
-          "value": "(",
-          "offset": 4,
-          "length": 1,
-          "line": 1,
-          "column": 5
-        },
         "sqrt": {
-          "lparen": {
-            "value": "(",
-            "offset": 9,
-            "length": 1,
-            "line": 1,
-            "column": 10
-          },
           "sqrt": {
             "unit": {
               "value": "m",
@@ -2653,23 +2194,8 @@
               "length": 1,
               "line": 1,
               "column": 11
-            },
-            "end_guard": null
-          },
-          "rparen": {
-            "value": ")",
-            "offset": 11,
-            "length": 1,
-            "line": 1,
-            "column": 12
+            }
           }
-        },
-        "rparen": {
-          "value": ")",
-          "offset": 12,
-          "length": 1,
-          "line": 1,
-          "column": 13
         }
       }
     },
@@ -2683,8 +2209,7 @@
           "length": 19,
           "line": 1,
           "column": 1
-        },
-        "end_guard": null
+        }
       }
     },
     {
@@ -2712,8 +2237,7 @@
             "length": 1,
             "line": 1,
             "column": 21
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -2736,8 +2260,7 @@
             "line": 1,
             "column": 21
           }
-        },
-        "end_guard": null
+        }
       }
     },
     {
@@ -2887,13 +2410,6 @@
             "column": 3
           },
           "power_numerator": {
-            "lparen": {
-              "value": "(",
-              "offset": 4,
-              "length": 1,
-              "line": 1,
-              "column": 5
-            },
             "int_exp": {
               "integer": {
                 "value": "1",
@@ -2902,16 +2418,8 @@
                 "line": 1,
                 "column": 6
               }
-            },
-            "rparen": {
-              "value": ")",
-              "offset": 6,
-              "length": 1,
-              "line": 1,
-              "column": 7
             }
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -2942,13 +2450,6 @@
             "column": 3
           },
           "power_numerator": {
-            "lparen": {
-              "value": "(",
-              "offset": 4,
-              "length": 1,
-              "line": 1,
-              "column": 5
-            },
             "int_exp": {
               "integer": {
                 "value": "-1",
@@ -2957,16 +2458,8 @@
                 "line": 1,
                 "column": 6
               }
-            },
-            "rparen": {
-              "value": ")",
-              "offset": 7,
-              "length": 1,
-              "line": 1,
-              "column": 8
             }
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -3164,8 +2657,7 @@
           "length": 2,
           "line": 1,
           "column": 1
-        },
-        "end_guard": null
+        }
       }
     },
     {
@@ -3187,8 +2679,7 @@
             "line": 1,
             "column": 4
           }
-        },
-        "end_guard": null
+        }
       }
     },
     {
@@ -3202,7 +2693,6 @@
           "line": 1,
           "column": 1
         },
-        "end_guard": null,
         "extender": {
           "value": "*",
           "offset": 2,
@@ -3217,8 +2707,7 @@
             "length": 1,
             "line": 1,
             "column": 4
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -3263,8 +2752,7 @@
               "line": 1,
               "column": 8
             }
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -3344,8 +2832,7 @@
                 "line": 1,
                 "column": 9
               }
-            },
-            "end_guard": null
+            }
           }
         }
       }
@@ -3563,8 +3050,7 @@
               "line": 1,
               "column": 6
             }
-          },
-          "end_guard": null
+          }
         }
       }
     },
@@ -3602,13 +3088,6 @@
             "column": 4
           },
           "power_numerator": {
-            "lparen": {
-              "value": "(",
-              "offset": 5,
-              "length": 1,
-              "line": 1,
-              "column": 6
-            },
             "int_exp": {
               "integer": {
                 "value": "-2",
@@ -3617,16 +3096,8 @@
                 "line": 1,
                 "column": 7
               }
-            },
-            "rparen": {
-              "value": ")",
-              "offset": 8,
-              "length": 1,
-              "line": 1,
-              "column": 9
             }
-          },
-          "end_guard": null
+          }
         }
       }
     },
