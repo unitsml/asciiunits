@@ -33,7 +33,9 @@ end
 tables = {
   "units" => Unitsml::Unitsdb.units.filtered,
   "prefixed_units" => Unitsml::Unitsdb.units.prefixed_symbols,
-  "short_units" => Unitsml::Unitsdb.units.units.filter_map do |unit|
+  # Share one longest-first choice with normal symbols: gal (UK) must beat
+  # the shorter gal alias, while mil (length) must beat the mil symbol.
+  "short_units" => Unitsml::Unitsdb.units.filtered + Unitsml::Unitsdb.units.units.filter_map do |unit|
     short = unit.short
     next if short.nil? || short.empty? || unit.symbols.to_a.empty?
     next if Unitsml::Unitsdb.units.find_by_symbol_id(short)

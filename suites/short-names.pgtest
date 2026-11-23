@@ -6,6 +6,8 @@ suite short_names for entry expression {
   accept "sqrt(arc_degree)"
   accept "(arc_degree)"
   accept "rad*arc_degree"
+  accept "gal (UK)"
+  accept "gal (US)"
   accept "pascal"
   accept "farad"
   accept "carat"
