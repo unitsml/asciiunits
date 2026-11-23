@@ -33,6 +33,9 @@ grammar UnitsmlAscii version "0.1.0" edition 2 {
 
   unit = alt from_table "units" column "name" as unit
   prefixed_units = alt from_table "prefixed_units" column "name" as unit
+  # Short names resolve as whole tokens, before accidental prefix/product
+  # decompositions. Existing symbol ids are excluded from this table.
+  short_units = alt from_table "short_units" column "name" as unit
   single_letter_prefixes = alt from_table "prefixes_single" column "name" as prefix
   double_letter_prefixes = alt from_table "prefixes_double" column "name" as prefix
   dimensions = alt from_table "dimensions" column "name" as dimension
@@ -46,7 +49,7 @@ grammar UnitsmlAscii version "0.1.0" edition 2 {
   extended_prefixed_units = extender [spaces] prefixes_units_int_exp as sequence
   powered_dimensions = dimensions [power]
 
-  prefixes_units = (sqrt_sequence [extended_prefixed_units]) / ("1" as unit [extended_prefixed_units]) / (unit_and_power extended_prefixed_units) / (unit_and_power end_guard) / (double_letter_prefixes unit_and_power extended_prefixed_units) / (double_letter_prefixes unit_and_power) / (single_letter_prefixes unit_and_power extended_prefixed_units) / (single_letter_prefixes unit_and_power) / (prefixed_units [power] end_guard)
+  prefixes_units = (short_units [power] end_guard [extended_prefixed_units]) / (sqrt_sequence [extended_prefixed_units]) / ("1" as unit [extended_prefixed_units]) / (unit_and_power extended_prefixed_units) / (unit_and_power end_guard) / (double_letter_prefixes unit_and_power extended_prefixed_units) / (double_letter_prefixes unit_and_power) / (single_letter_prefixes unit_and_power extended_prefixed_units) / (single_letter_prefixes unit_and_power) / (prefixed_units [power] end_guard)
 
   wrapper_prefixes_units_value = int_exp_prefixes_units / prefixes_units_int_exp
   int_exp_prefixes_units = lparen [spaces] named_int_exp_prefixes_units as int_exp [spaces] rparen
