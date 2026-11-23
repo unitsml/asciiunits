@@ -1,6 +1,6 @@
 {
   "grammar": "unitsml",
-  "artifact_checksum": "sha256:d30db3534e330b2e16c1387f3eb4dbe140593b3850db561aea23801a9215d718",
+  "artifact_checksum": "sha256:2159dfb6e4faaf04a846ed351dd84b545d4ecfeb3c33905bea378ac97cc4ab48",
   "cases": [
     {
       "input": "m",

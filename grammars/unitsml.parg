@@ -36,7 +36,9 @@ grammar UnitsmlAscii version "0.1.0" edition 2 {
   # Short names resolve as whole tokens, before accidental prefix/product
   # decompositions. Normal symbols share the longest-first choice so a
   # shorter alias cannot shadow an existing multiword symbol.
-  short_units = alt from_table "short_units" column "name" as unit
+  # A short name starts at input start or after whitespace, *, /, ( or ).
+  # Without this, kstatfarad can acquire a farad alias in its symbol run.
+  short_units = !<%x00-08 !<%x0E-1F !<%x21-27 !<%x2B-2E !<%x30-10FFFF alt from_table "short_units" column "name" as unit
   single_letter_prefixes = alt from_table "prefixes_single" column "name" as prefix
   double_letter_prefixes = alt from_table "prefixes_double" column "name" as prefix
   dimensions = alt from_table "dimensions" column "name" as dimension
