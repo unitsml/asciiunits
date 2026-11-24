@@ -12,7 +12,7 @@ require "set"
 #
 # Tree rules (parsanol-tree/v2, edition 2):
 #   Str, Re               text
-#   Lookahead             nil
+#   Lookahead, Lookbehind nil
 #   Named(name, atom)     a hash with the one key +name+
 #   Sequence              the merged keys of its hash parts; text when no
 #                         part is a hash
@@ -70,7 +70,7 @@ class CaptureShapes
   def evaluate(type, atom)
     case type
     when "Str", "Re" then Shape.of(:text)
-    when "Lookahead" then Shape.of(:nil)
+    when "Lookahead", "Lookbehind" then Shape.of(:nil)
     when "Entity" then shape(atom.fetch("atom"))
     when "Named" then named(atom.fetch("name"), shape(atom.fetch("atom")))
     when "Alternative" then atom.fetch("atoms").map { |i| shape(i) }.reduce(Shape.of, :|)

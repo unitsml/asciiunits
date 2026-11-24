@@ -2,7 +2,8 @@
 
 # unitsml gem terminal selection -> tables/*.yaml
 #
-# Mirrors lib/unitsml/parse.rb exactly: units.filtered, prefixed_symbols,
+# Symbol terminals mirror units.filtered and prefixed_symbols; short names
+# are complete unit tokens and never prefix suffixes. Also includes
 # prefixes_by_size(1/2), dimensions.parsables.keys. Deterministic ordering (length desc, then
 # alphabetical); the compiler expands from_table longest-first anyway.
 
@@ -32,6 +33,15 @@ end
 tables = {
   "units" => Unitsml::Unitsdb.units.filtered,
   "prefixed_units" => Unitsml::Unitsdb.units.prefixed_symbols,
+  # Share one longest-first choice with normal symbols: gal (UK) must beat
+  # the shorter gal alias, while mil (length) must beat the mil symbol.
+  "short_units" => Unitsml::Unitsdb.units.filtered + Unitsml::Unitsdb.units.units.filter_map do |unit|
+    short = unit.short
+    next if short.nil? || short.empty? || unit.symbols.to_a.empty?
+    next if Unitsml::Unitsdb.units.find_by_symbol_id(short)
+
+    short
+  end,
   "prefixes_single" => Unitsml::Unitsdb.prefixes_by_size(1),
   "prefixes_double" => Unitsml::Unitsdb.prefixes_by_size(2),
   "dimensions" => Unitsml::Unitsdb.dimensions.parsables.keys,
